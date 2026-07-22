@@ -135,6 +135,8 @@ export interface CharacterMeta {
 }
 
 export interface Character {
+  /** Stable id for the roster (generated on creation/import). */
+  id: string
   meta: CharacterMeta
   identity: {
     name: string

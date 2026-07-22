@@ -8,4 +8,4 @@
 import type { Character } from '@/types/character'
 import raw from './pal-ula500.json'
 
-export const ula500 = raw as unknown as Character
+export const ula500 = { id: 'pal-ula500', ...(raw as object) } as unknown as Character
