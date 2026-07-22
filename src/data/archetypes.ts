@@ -6,6 +6,9 @@
  */
 import type { Character, Skill, StatKey, SpecBonus } from '@/types/character'
 import { STAT_KEYS } from '@/types/character'
+import { ula500 } from '@/fixtures'
+import jenJson from './realChars/jen.json'
+import sid64Json from './realChars/sid64.json'
 
 type SkillDef = [id: string, name: string, cat: string, s1: StatKey, s2: StatKey, ranks: number, cost: number, spec?: number]
 
@@ -312,4 +315,14 @@ export const archetypes: Archetype[] = [
   { id: explorator.id, name: explorator.identity.name, role: explorator.identity.role!, blurb: 'Magos del Mechanicus: tecnologia, archeotech e xeno-arcanologia. Più impianti che carne.', character: explorator },
   { id: navigator.id, name: navigator.identity.name, role: navigator.identity.role!, blurb: 'Navigatore mutante: guida la nave nel warp col terzo occhio. Aristocratico e inquietante.', character: navigator },
   { id: astropath.id, name: astropath.identity.name, role: astropath.identity.role!, blurb: 'Astropate cieco e legato all\'anima: telepatia astro, psionica e resistenza all\'immaterium.', character: astropath },
+]
+
+// Personaggi reali del tavolo (schede vere, estratte dai PDF originali).
+const jen = jenJson as unknown as Character
+const sid64 = sid64Json as unknown as Character
+
+export const tableCharacters: Archetype[] = [
+  { id: 'real-ula', name: ula500.identity.name, role: ula500.identity.role ?? 'Techsorcist', blurb: 'La scheda di riferimento del tavolo: Techsorcist ex-Xenogenetista dell\'Ordo Malleus. 48 abilità, 362 DP.', character: ula500 },
+  { id: 'real-jen', name: jen.identity.name, role: jen.identity.role ?? 'Assassino', blurb: 'Assassino del ciclo di Korvaal, "lo Xenocida": furtività, veleni, travestimenti e morte silenziosa.', character: jen },
+  { id: 'real-sid64', name: sid64.identity.name, role: sid64.identity.role ?? 'Tecnoprete', blurb: 'Tecnoprete Malatek: tecnologia proibita e archeotech ai margini del Mechanicus.', character: sid64 },
 ]

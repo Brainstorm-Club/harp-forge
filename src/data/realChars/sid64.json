@@ -1,0 +1,1124 @@
+{
+  "id": "real-sid64",
+  "meta": {
+    "schemaVersion": "1.0",
+    "app": "harp-forge",
+    "createdAt": "2026-07-22T10:00:00Z",
+    "updatedAt": "2026-07-22T10:00:00Z",
+    "ruleset": "harp-40k-tavolo-v1"
+  },
+  "identity": {
+    "name": "Mos Sid 64",
+    "race": "umana",
+    "role": "Tecnoprete Malatek",
+    "professions": [
+      {
+        "name": "tecnoprete malatek",
+        "level": 2
+      }
+    ],
+    "description": "",
+    "history": ""
+  },
+  "stats": {
+    "values": {
+      "St": {
+        "value": 60,
+        "race": 4,
+        "spec": 0
+      },
+      "Co": {
+        "value": 76,
+        "race": 0,
+        "spec": 0
+      },
+      "Ag": {
+        "value": 60,
+        "race": -2,
+        "spec": 0
+      },
+      "Qu": {
+        "value": 59,
+        "race": 0,
+        "spec": 0
+      },
+      "Sd": {
+        "value": 71,
+        "race": 0,
+        "spec": 0
+      },
+      "Re": {
+        "value": 99,
+        "race": 3,
+        "spec": 0
+      },
+      "In": {
+        "value": 91,
+        "race": 0,
+        "spec": 0
+      },
+      "Pr": {
+        "value": 48,
+        "race": 0,
+        "spec": 0
+      }
+    }
+  },
+  "dp": {
+    "budget": 350
+  },
+  "skills": [
+    {
+      "id": "endurance-001",
+      "category": "fisiche",
+      "name": "Endurance",
+      "stats": [
+        "Co",
+        "Sd"
+      ],
+      "ranks": 9,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": "recitare-003",
+      "category": "fisiche",
+      "name": "Recitare",
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "danzare-004",
+      "category": "fisiche",
+      "name": "Danzare",
+      "stats": [
+        "Ag",
+        "Pr"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "scrittura-007",
+      "category": "fisiche",
+      "name": "Scrittura",
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "scultura-008",
+      "category": "fisiche",
+      "name": "Scultura",
+      "stats": [
+        "In",
+        "Ag"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "travestirsi-009",
+      "category": "fisiche",
+      "name": "Travestirsi",
+      "stats": [
+        "Pr",
+        "Sd"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "equilibrio-011",
+      "category": "fisiche",
+      "name": "Equilibrio",
+      "stats": [
+        "Ag",
+        "Sd"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "acrobazia-012",
+      "category": "fisiche",
+      "name": "Acrobazia",
+      "stats": [
+        "Ag",
+        "Sd"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": [
+        {
+          "value": -20
+        }
+      ]
+    },
+    {
+      "id": "arrampicarsi-013",
+      "category": "fisiche",
+      "name": "Arrampicarsi",
+      "stats": [
+        "Ag",
+        "St"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "saltare-018",
+      "category": "fisiche",
+      "name": "Saltare",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "correre-019",
+      "category": "fisiche",
+      "name": "Correre",
+      "stats": [
+        "Ag",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "nuotare-020",
+      "category": "fisiche",
+      "name": "Nuotare",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "nuotare-s-c-u-b-a-021",
+      "category": "fisiche",
+      "name": "Nuotare S.C.U.B.A",
+      "stats": [
+        "In",
+        "Sd"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "schivare-022",
+      "category": "fisiche",
+      "name": "Schivare",
+      "stats": [
+        "Ag",
+        "Qu"
+      ],
+      "ranks": 0,
+      "cost": 20,
+      "spec": [
+        {
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "armature-leggere-023",
+      "category": "fisiche",
+      "name": "Armature leggere",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "armature-medie-024",
+      "category": "fisiche",
+      "name": "Armature medie",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "armature-pesanti-025",
+      "category": "fisiche",
+      "name": "Armature pesanti",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "armature-potenziate-026",
+      "category": "fisiche",
+      "name": "Armature potenziate",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 4,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "resistenza-tempra-027",
+      "category": "fisiche",
+      "name": "Resistenza Tempra",
+      "stats": [
+        "Co",
+        "Co"
+      ],
+      "ranks": 4,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "resistenza-psi-028",
+      "category": "fisiche",
+      "name": "Resistenza PSI",
+      "stats": [
+        "In",
+        "In"
+      ],
+      "ranks": 4,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "resistenza-volonta-029",
+      "category": "fisiche",
+      "name": "Resistenza Volontà",
+      "stats": [
+        "Sd",
+        "Sd"
+      ],
+      "ranks": 4,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "artiglieria-031",
+      "category": "combattimento",
+      "name": "Artiglieria",
+      "stats": [
+        "Qu",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "artiglieria-032",
+      "category": "combattimento",
+      "name": "Artiglieria",
+      "stats": [
+        "Qu",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "cifrari-di-battaglia-033",
+      "category": "combattimento",
+      "name": "Cifrari di battaglia",
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "demolizioni-034",
+      "category": "combattimento",
+      "name": "Demolizioni",
+      "stats": [
+        "Sd",
+        "Ag"
+      ],
+      "ranks": 2,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "artificere-035",
+      "category": "combattimento",
+      "name": "Artificere",
+      "stats": [
+        "Re",
+        "Sd"
+      ],
+      "ranks": 3,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "wp-laser-036",
+      "category": "combattimento",
+      "name": "WP Laser",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 3,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "wp-plasma-037",
+      "category": "combattimento",
+      "name": "WP Plasma",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 2,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "furia-054",
+      "category": "mentali",
+      "name": "Furia",
+      "stats": [
+        "Sd",
+        "Co"
+      ],
+      "ranks": 0,
+      "cost": 8,
+      "spec": []
+    },
+    {
+      "id": "logica-056",
+      "category": "mentali",
+      "name": "Logica",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": "concentrazione-057",
+      "category": "mentali",
+      "name": "Concentrazione",
+      "stats": [
+        "Sd",
+        "Sd"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "diplomazia-066",
+      "category": "interazione",
+      "name": "Diplomazia",
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": [
+        {
+          "value": -10
+        }
+      ]
+    },
+    {
+      "id": "interrogare-067",
+      "category": "interazione",
+      "name": "Interrogare",
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "contrattare-069",
+      "category": "interazione",
+      "name": "Contrattare",
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "intimidire-071",
+      "category": "interazione",
+      "name": "Intimidire",
+      "stats": [
+        "Pr",
+        "St"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "intuizione-072",
+      "category": "interazione",
+      "name": "Intuizione",
+      "stats": [
+        "In",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "ingannare-073",
+      "category": "interazione",
+      "name": "Ingannare",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "consapevolezza-076",
+      "category": "percettive",
+      "name": "Consapevolezza",
+      "stats": [
+        "In",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "percezione-077",
+      "category": "percettive",
+      "name": "Percezione",
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "cercare-078",
+      "category": "percettive",
+      "name": "Cercare",
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "lettura-labiale-079",
+      "category": "percettive",
+      "name": "Lettura labiale",
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 0,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "ambiente-zero-g-091",
+      "category": "percettive",
+      "name": "Ambiente zero -G",
+      "stats": [
+        "Ag",
+        "Sd"
+      ],
+      "ranks": 2,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "sistemi-di-sicurezza-095",
+      "category": "sotterfugio",
+      "name": "Sistemi di sicurezza",
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 2,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "culto-mechanicus-107",
+      "category": "conoscenze-comuni",
+      "name": "Culto Mechanicus",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 8,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "dottrina-imperiale-108",
+      "category": "conoscenze-comuni",
+      "name": "Dottrina imperiale",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": [
+        {
+          "value": -10
+        }
+      ]
+    },
+    {
+      "id": "ecclesiarchia-109",
+      "category": "conoscenze-comuni",
+      "name": "Ecclesiarchia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 5,
+      "spec": [
+        {
+          "value": -10
+        }
+      ]
+    },
+    {
+      "id": "storia-imperiale-112",
+      "category": "conoscenze-comuni",
+      "name": "Storia Imperiale",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "imperium-113",
+      "category": "conoscenze-comuni",
+      "name": "Imperium",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "tecnologia-armi-120",
+      "category": "conoscenze-comuni",
+      "name": "Tecnologia Armi",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 6,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 25
+        }
+      ]
+    },
+    {
+      "id": "gotico-scritto-123",
+      "category": "conoscenze-comuni",
+      "name": "Gotico scritto",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "alto-gotico-scritto-124",
+      "category": "conoscenze-comuni",
+      "name": "Alto gotico scritto",
+      "stats": [
+        "Re",
+        "Re"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "alto-gotico-parlato-125",
+      "category": "conoscenze-comuni",
+      "name": "Alto Gotico parlato",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "biologia-129",
+      "category": "conoscenze-accademiche",
+      "name": "Biologia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 6,
+      "spec": []
+    },
+    {
+      "id": "botanica-130",
+      "category": "conoscenze-accademiche",
+      "name": "Botanica",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 6,
+      "spec": []
+    },
+    {
+      "id": "chimica-131",
+      "category": "conoscenze-accademiche",
+      "name": "Chimica",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 6,
+      "spec": []
+    },
+    {
+      "id": "tattica-imperium-153",
+      "category": "conoscenze-accademiche",
+      "name": "Tattica Imperium",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 6,
+      "spec": []
+    },
+    {
+      "id": "geomanzia-154",
+      "category": "conoscenze-accademiche",
+      "name": "Geomanzia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 8,
+      "spec": []
+    },
+    {
+      "id": "medicina-155",
+      "category": "conoscenze-accademiche",
+      "name": "Medicina",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 6,
+      "spec": []
+    },
+    {
+      "id": "planetomanzia-156",
+      "category": "conoscenze-accademiche",
+      "name": "Planetomanzia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 6,
+      "spec": []
+    },
+    {
+      "id": "xenologia-157",
+      "category": "conoscenze-accademiche",
+      "name": "Xenologia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "archeologia-161",
+      "category": "conoscenze-accademiche",
+      "name": "Archeologia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "astromanzia-163",
+      "category": "conoscenze-accademiche",
+      "name": "Astromanzia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 8,
+      "spec": []
+    },
+    {
+      "id": "adeptus-mechanicus-166",
+      "category": "conoscenze-proibite",
+      "name": "Adeptus Mechanicus",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 8,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "archeotech-167",
+      "category": "conoscenze-proibite",
+      "name": "Archeotech",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 3,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "demonologia-169",
+      "category": "conoscenze-proibite",
+      "name": "Demonologia",
+      "stats": [
+        "In",
+        "Sd"
+      ],
+      "ranks": 1,
+      "cost": 8,
+      "spec": [
+        {
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "psionici-171",
+      "category": "conoscenze-proibite",
+      "name": "Psionici",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "immaterium-172",
+      "category": "conoscenze-proibite",
+      "name": "Immaterium",
+      "stats": [
+        "In",
+        "Sd"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "ordo-inquisitorii-173",
+      "category": "conoscenze-proibite",
+      "name": "Ordo inquisitorii",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 8,
+      "spec": []
+    },
+    {
+      "id": "xeno-eldar-175",
+      "category": "conoscenze-proibite",
+      "name": "Xeno: Eldar",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 40
+        }
+      ]
+    },
+    {
+      "id": "xeno-necron-176",
+      "category": "conoscenze-proibite",
+      "name": "Xeno: Necron",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "xenotech-eldar-178",
+      "category": "conoscenze-proibite",
+      "name": "Xenotech.Eldar",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "xenotech-necron-179",
+      "category": "conoscenze-proibite",
+      "name": "Xenotech.Necron",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "uso-tecnologia-183",
+      "category": "competenze-tecniche",
+      "name": "Uso Tecnologia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 5,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "riparare-tecnologia-184",
+      "category": "competenze-tecniche",
+      "name": "Riparare tecnologia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 5,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "tecnomanzia-185",
+      "category": "competenze-tecniche",
+      "name": "Tecnomanzia",
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 4,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "pilotare-navette-186",
+      "category": "competenze-tecniche",
+      "name": "Pilotare Navette",
+      "stats": [
+        "Qu",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "guidare-auto-189",
+      "category": "competenze-tecniche",
+      "name": "Guidare Auto",
+      "stats": [
+        "Qu",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": []
+    }
+  ],
+  "implants": [],
+  "weapons": [],
+  "armour": [],
+  "counters": {
+    "fate": 2,
+    "insanity": 0,
+    "corruption": 0
+  }
+}

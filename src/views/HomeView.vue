@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCharacterStore } from '@/stores/character'
 import { ula500 } from '@/fixtures'
-import { archetypes, type Archetype } from '@/data/archetypes'
+import { archetypes, tableCharacters, type Archetype } from '@/data/archetypes'
 
 const store = useCharacterStore()
 const router = useRouter()
@@ -85,6 +85,23 @@ function professions(c: (typeof store.roster)[number]): string {
       </li>
     </ul>
 
+    <h2 id="tavolo-heading">Personaggi del tavolo <span class="hint">· schede reali</span></h2>
+    <ul class="archetypes" aria-labelledby="tavolo-heading">
+      <li v-for="a in tableCharacters" :key="a.id" class="arch-card arch-card--real">
+        <span class="arch-card__name">{{ a.name }}</span>
+        <span class="arch-card__role">{{ a.role }}</span>
+        <span class="arch-card__blurb">{{ a.blurb }}</span>
+        <button
+          class="btn btn--ghost btn--sm"
+          type="button"
+          :aria-label="`Usa la scheda di ${a.name} (${a.role})`"
+          @click="loadArchetype(a)"
+        >
+          Usa questa scheda →
+        </button>
+      </li>
+    </ul>
+
     <h2>Roster · {{ store.roster.length }} {{ store.roster.length === 1 ? 'personaggio' : 'personaggi' }}</h2>
 
     <p v-if="!store.roster.length" class="sub">
@@ -144,4 +161,5 @@ function professions(c: (typeof store.roster)[number]): string {
 .arch-card__role { color: var(--gold); font-size: 0.82rem; }
 .arch-card__blurb { color: var(--muted); font-size: 0.86rem; flex: 1; }
 .arch-card .btn { align-self: flex-start; margin-top: 0.2rem; }
+.arch-card--real { border-left: 3px solid var(--accent); }
 </style>
