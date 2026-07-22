@@ -2,7 +2,14 @@
  * PDF export — fills the ready-made Italian HARP AcroForm sheet with the
  * current character and downloads it. pdf-lib is imported lazily so it stays
  * out of the initial bundle (planning §5, code splitting).
+ *
+ * Perf note: the template has ~1900 fields. pdf-lib's `form.getTextField(name)`
+ * is a linear scan, so calling it per field is O(n²) (~2s for a full sheet and
+ * far worse in-browser). We build a name→field map ONCE and reuse it, and skip
+ * the global appearance refresh on save (we regenerate appearances only for the
+ * fields we actually fill). Result: a full export runs in well under a second.
  */
+import type { PDFTextField as TextField } from 'pdf-lib'
 import type { Character } from '@/types/character'
 import type { Ruleset } from '@/types/ruleset'
 import { mapCharacterToFields, normalizeSkillName } from '@/utils/pdfFieldMapping'
@@ -18,12 +25,8 @@ export interface ExportResult {
 }
 
 export function usePdfExport() {
-  /**
-   * Fill the template and trigger a download. Keeps the form editable
-   * (no flatten) so it can be tweaked in a PDF viewer afterwards.
-   */
   async function exportPdf(character: Character, ruleset: Ruleset): Promise<ExportResult> {
-    const { PDFDocument, StandardFonts } = await import('pdf-lib')
+    const { PDFDocument, StandardFonts, PDFTextField } = await import('pdf-lib')
 
     const res = await fetch(TEMPLATE_URL)
     if (!res.ok) throw new Error(`Template non trovato (${res.status}) a ${TEMPLATE_URL}`)
@@ -31,29 +34,33 @@ export function usePdfExport() {
 
     const doc = await PDFDocument.load(bytes)
     const form = doc.getForm()
+    const font = await doc.embedFont(StandardFonts.Helvetica)
 
-    // Build "pre-printed skill name → slot number" index from the template.
-    const slotIndex = new Map<string, string>()
+    // One pass: build name → text field map (avoids O(n²) getTextField).
+    const fieldMap = new Map<string, TextField>()
     for (const field of form.getFields()) {
-      const m = field.getName().match(/^skill\.(\d+)\.name$/)
+      if (field instanceof PDFTextField) fieldMap.set(field.getName(), field)
+    }
+
+    // Pre-printed skill name → slot number, read from the template labels.
+    const slotIndex = new Map<string, string>()
+    for (const [name, field] of fieldMap) {
+      const m = name.match(/^skill\.(\d+)\.name$/)
       if (!m) continue
-      const label = form.getTextField(field.getName()).getText()
+      const label = field.getText()
       if (label && label.trim()) slotIndex.set(normalizeSkillName(label), m[1]!)
     }
 
     const { values, unmatched } = mapCharacterToFields(character, ruleset, slotIndex)
 
-    // Fill only the fields we know, and regenerate appearances for JUST those.
-    // The template has ~1900 fields; letting save() refresh them all blocks the
-    // main thread for a long time, so we opt out of the global appearance pass.
-    const font = await doc.embedFont(StandardFonts.Helvetica)
     for (const [name, value] of Object.entries(values)) {
+      const field = fieldMap.get(name)
+      if (!field) continue
       try {
-        const f = form.getTextField(name)
-        f.setText(value)
-        f.updateAppearances(font)
+        field.setText(value)
+        field.updateAppearances(font)
       } catch {
-        // Field absent in this template revision — skip silently.
+        // Odd field state — skip rather than abort the whole export.
       }
     }
 

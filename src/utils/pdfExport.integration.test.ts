@@ -6,7 +6,7 @@
 import { describe, it, expect, beforeAll } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath, URL } from 'node:url'
-import { PDFDocument, StandardFonts } from 'pdf-lib'
+import { PDFDocument, StandardFonts, PDFTextField } from 'pdf-lib'
 import { mapCharacterToFields, normalizeSkillName } from './pdfFieldMapping'
 import { harp40k } from '@/data/rulesets/harp40k'
 import { ula500 } from '@/fixtures'
@@ -19,26 +19,28 @@ let unmatched: string[]
 beforeAll(async () => {
   const doc = await PDFDocument.load(readFileSync(templatePath))
   const form = doc.getForm()
+  const font = await doc.embedFont(StandardFonts.Helvetica)
+
+  const fieldMap = new Map<string, PDFTextField>()
+  for (const field of form.getFields()) {
+    if (field instanceof PDFTextField) fieldMap.set(field.getName(), field)
+  }
 
   const slotIndex = new Map<string, string>()
-  for (const field of form.getFields()) {
-    const m = field.getName().match(/^skill\.(\d+)\.name$/)
+  for (const [name, field] of fieldMap) {
+    const m = name.match(/^skill\.(\d+)\.name$/)
     if (!m) continue
-    const label = form.getTextField(field.getName()).getText()
+    const label = field.getText()
     if (label && label.trim()) slotIndex.set(normalizeSkillName(label), m[1]!)
   }
 
   const mapped = mapCharacterToFields(ula500, harp40k, slotIndex)
   unmatched = mapped.unmatched
-  const font = await doc.embedFont(StandardFonts.Helvetica)
   for (const [name, value] of Object.entries(mapped.values)) {
-    try {
-      const f = form.getTextField(name)
-      f.setText(value)
-      f.updateAppearances(font)
-    } catch {
-      /* field absent — ignore */
-    }
+    const f = fieldMap.get(name)
+    if (!f) continue
+    f.setText(value)
+    f.updateAppearances(font)
   }
 
   const bytes = await doc.save({ updateFieldAppearances: false })
