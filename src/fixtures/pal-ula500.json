@@ -1,0 +1,1040 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "app": "harp-forge",
+    "createdAt": "2026-07-22T10:00:00Z",
+    "updatedAt": "2026-07-22T10:00:00Z",
+    "ruleset": "harp-40k-tavolo-v1"
+  },
+  "identity": {
+    "name": "Pal Ula500",
+    "race": "Umana (Forge World)",
+    "professions": [
+      {
+        "name": "Cleric",
+        "level": 6
+      },
+      {
+        "name": "Warrior",
+        "level": 6
+      }
+    ],
+    "origin": "Stygies VIII",
+    "role": "Techsorcist — Ex Xenogenetista — Ordo Malleus",
+    "description": "Corporatura asciutta e nervosa. Metà sinistra del viso organica, metà destra innesti diagnostici. Mani organiche in guanti chirurgici logori. Mechadendrite Techsorcist dorsale. Tonaca rosso ruggine su carapace leggera. Sigillo Ordo Malleus saldato sulla clavicola.",
+    "history": "Ex Genetor Xenogenetista di Stygies VIII. Ha visto un collega protetto da scismigramma venire corrotto dal Caos: lo scismigramma stesso era il vettore, compromesso prima dell'installazione. Ha dovuto eliminare il collega con le proprie mani. Divenuta Techsorcist, reclamata dall'Ordo Malleus."
+  },
+  "stats": {
+    "values": {
+      "St": {
+        "value": 83,
+        "race": 4,
+        "spec": 0
+      },
+      "Co": {
+        "value": 92,
+        "race": 0,
+        "spec": 0
+      },
+      "Ag": {
+        "value": 62,
+        "race": -2,
+        "spec": 0
+      },
+      "Qu": {
+        "value": 57,
+        "race": 0,
+        "spec": 0
+      },
+      "Sd": {
+        "value": 94,
+        "race": 0,
+        "spec": 0
+      },
+      "Re": {
+        "value": 95,
+        "race": 0,
+        "spec": 3
+      },
+      "In": {
+        "value": 94,
+        "race": 0,
+        "spec": 2
+      },
+      "Pr": {
+        "value": 20,
+        "race": 0,
+        "spec": 0
+      }
+    }
+  },
+  "dp": {
+    "budget": 350,
+    "overrideNote": "GM: sforamento di 12 DP da valutare (aggiunte Medicina spec, Xenologia, Archeotecnologia, Mutanti richieste dal GM)"
+  },
+  "skills": [
+    {
+      "id": "endurance",
+      "category": "fisiche",
+      "name": "Endurance",
+      "cost": 2,
+      "stats": [
+        "Co",
+        "Sd"
+      ],
+      "ranks": 8,
+      "spec": []
+    },
+    {
+      "id": "correre",
+      "category": "fisiche",
+      "name": "Correre",
+      "cost": 2,
+      "stats": [
+        "Ag",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "arrampicarsi",
+      "category": "fisiche",
+      "name": "Arrampicarsi",
+      "cost": 2,
+      "stats": [
+        "Ag",
+        "St"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "armature-medie",
+      "category": "fisiche",
+      "name": "Armature medie",
+      "cost": 2,
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 2,
+      "spec": []
+    },
+    {
+      "id": "armature-potenziate",
+      "category": "fisiche",
+      "name": "Armature potenziate",
+      "cost": 2,
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 4,
+      "spec": []
+    },
+    {
+      "id": "resistenza-tempra",
+      "category": "fisiche",
+      "name": "Resistenza Tempra",
+      "cost": 2,
+      "stats": [
+        "Co",
+        "Co"
+      ],
+      "ranks": 4,
+      "spec": []
+    },
+    {
+      "id": "resistenza-psi",
+      "category": "fisiche",
+      "name": "Resistenza PSI",
+      "cost": 2,
+      "stats": [
+        "In",
+        "In"
+      ],
+      "ranks": 6,
+      "spec": [
+        {
+          "value": 10,
+          "source": "Augur Array"
+        }
+      ]
+    },
+    {
+      "id": "resistenza-volonta",
+      "category": "fisiche",
+      "name": "Resistenza Volontà",
+      "cost": 2,
+      "stats": [
+        "Sd",
+        "Sd"
+      ],
+      "ranks": 6,
+      "spec": []
+    },
+    {
+      "id": "wp-ascia-potenza",
+      "category": "combattimento",
+      "name": "WP Ascia Potenza",
+      "cost": 4,
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 5,
+      "spec": [
+        {
+          "value": 5,
+          "source": "Innesto Muscolare Sintetico"
+        }
+      ]
+    },
+    {
+      "id": "wp-arma-bianca",
+      "category": "combattimento",
+      "name": "WP Arma Bianca",
+      "cost": 4,
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 3,
+      "spec": [
+        {
+          "value": 2,
+          "source": "Innesto Muscolare Sintetico"
+        }
+      ]
+    },
+    {
+      "id": "wp-pistola",
+      "category": "combattimento",
+      "name": "WP Pistola",
+      "cost": 4,
+      "stats": [
+        "Qu",
+        "In"
+      ],
+      "ranks": 5,
+      "spec": []
+    },
+    {
+      "id": "cifrari-di-battaglia",
+      "category": "combattimento",
+      "name": "Cifrari di battaglia",
+      "cost": 4,
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "logica",
+      "category": "mentali",
+      "name": "Logica",
+      "cost": 4,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "spec": []
+    },
+    {
+      "id": "concentrazione",
+      "category": "mentali",
+      "name": "Concentrazione",
+      "cost": 4,
+      "stats": [
+        "Sd",
+        "Sd"
+      ],
+      "ranks": 2,
+      "spec": []
+    },
+    {
+      "id": "focus-mentale",
+      "category": "mentali",
+      "name": "Focus mentale",
+      "cost": 4,
+      "stats": [
+        "Sd",
+        "Sd"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "furia",
+      "category": "mentali",
+      "name": "Furia",
+      "cost": 8,
+      "stats": [
+        "Sd",
+        "Co"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "intuizione",
+      "category": "percettive",
+      "name": "Intuizione",
+      "cost": 4,
+      "stats": [
+        "In",
+        "In"
+      ],
+      "ranks": 3,
+      "spec": [
+        {
+          "value": 10,
+          "source": "Augur Array"
+        }
+      ]
+    },
+    {
+      "id": "percezione",
+      "category": "percettive",
+      "name": "Percezione",
+      "cost": 4,
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 3,
+      "spec": [
+        {
+          "value": 10,
+          "source": "Augur Array"
+        }
+      ]
+    },
+    {
+      "id": "cercare",
+      "category": "percettive",
+      "name": "Cercare",
+      "cost": 4,
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 2,
+      "spec": []
+    },
+    {
+      "id": "consapevolezza",
+      "category": "percettive",
+      "name": "Consapevolezza",
+      "cost": 4,
+      "stats": [
+        "In",
+        "In"
+      ],
+      "ranks": 2,
+      "spec": [
+        {
+          "value": 10,
+          "source": "Augur Array"
+        }
+      ]
+    },
+    {
+      "id": "interrogare",
+      "category": "interazione",
+      "name": "Interrogare",
+      "cost": 4,
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 2,
+      "spec": []
+    },
+    {
+      "id": "intimidire",
+      "category": "interazione",
+      "name": "Intimidire",
+      "cost": 4,
+      "stats": [
+        "Pr",
+        "St"
+      ],
+      "ranks": 2,
+      "spec": []
+    },
+    {
+      "id": "diplomazia",
+      "category": "interazione",
+      "name": "Diplomazia",
+      "cost": 4,
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 0,
+      "spec": []
+    },
+    {
+      "id": "leadership",
+      "category": "interazione",
+      "name": "Leadership",
+      "cost": 4,
+      "stats": [
+        "Pr",
+        "Pr"
+      ],
+      "ranks": 0,
+      "spec": []
+    },
+    {
+      "id": "uso-veleni",
+      "category": "sotterfugio",
+      "name": "Uso veleni",
+      "cost": 4,
+      "stats": [
+        "In",
+        "Sd"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "scienza-criminale",
+      "category": "sotterfugio",
+      "name": "Scienza criminale",
+      "cost": 4,
+      "stats": [
+        "Sd",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "culto-mechanicus",
+      "category": "conoscenze-comuni",
+      "name": "Culto Mechanicus",
+      "cost": 2,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 6,
+      "spec": []
+    },
+    {
+      "id": "dottrina-imperiale",
+      "category": "conoscenze-comuni",
+      "name": "Dottrina imperiale",
+      "cost": 2,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "imperium",
+      "category": "conoscenze-comuni",
+      "name": "Imperium",
+      "cost": 2,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "pronto-soccorso",
+      "category": "conoscenze-comuni",
+      "name": "Pronto soccorso",
+      "cost": 2,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "biologia",
+      "category": "conoscenze-accademiche",
+      "name": "Biologia",
+      "cost": 6,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "chimica",
+      "category": "conoscenze-accademiche",
+      "name": "Chimica",
+      "cost": 6,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "medicina",
+      "category": "conoscenze-accademiche",
+      "name": "Medicina",
+      "cost": 4,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": [
+        {
+          "value": 15,
+          "source": "Addestramento chirurgico ex-Genetor (GM)"
+        }
+      ]
+    },
+    {
+      "id": "xenologia",
+      "category": "conoscenze-accademiche",
+      "name": "Xenologia",
+      "cost": 4,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": [
+        {
+          "value": 10,
+          "source": "Esperienza diretta con organismi alieni (GM)"
+        }
+      ]
+    },
+    {
+      "id": "adeptus-mechanicus",
+      "category": "conoscenze-proibite",
+      "name": "Adeptus Mechanicus",
+      "cost": 2,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 5,
+      "spec": [
+        {
+          "value": 15,
+          "source": "Clearance Techsorcist + archivi Ordo Malleus"
+        }
+      ]
+    },
+    {
+      "id": "tecno-eresie",
+      "category": "conoscenze-proibite",
+      "name": "Tecno-Eresie",
+      "cost": 8,
+      "stats": [
+        "In",
+        "Sd"
+      ],
+      "ranks": 3,
+      "spec": [
+        {
+          "value": 15,
+          "source": "Addestramento Ordine delle Rune d'Ossa"
+        }
+      ]
+    },
+    {
+      "id": "archeotecnologia",
+      "category": "conoscenze-proibite",
+      "name": "Archeotecnologia",
+      "cost": 4,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": [
+        {
+          "value": 10,
+          "source": "Esperienza con tecnologia antica (GM)"
+        }
+      ]
+    },
+    {
+      "id": "psionici",
+      "category": "conoscenze-proibite",
+      "name": "Psionici",
+      "cost": 4,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "spec": []
+    },
+    {
+      "id": "immaterium",
+      "category": "conoscenze-proibite",
+      "name": "Immaterium",
+      "cost": 4,
+      "stats": [
+        "In",
+        "Sd"
+      ],
+      "ranks": 2,
+      "spec": []
+    },
+    {
+      "id": "ordo-inquisitorii",
+      "category": "conoscenze-proibite",
+      "name": "Ordo inquisitorii",
+      "cost": 8,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "eresia",
+      "category": "conoscenze-proibite",
+      "name": "Eresia",
+      "cost": 4,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "xeno-generico",
+      "category": "conoscenze-proibite",
+      "name": "Xeno (generico)",
+      "cost": 2,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "mutanti",
+      "category": "conoscenze-proibite",
+      "name": "Mutanti",
+      "cost": 6,
+      "stats": [
+        "Re",
+        "Sd"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "uso-tecnologia",
+      "category": "competenze-tecniche",
+      "name": "Uso Tecnologia",
+      "cost": 2,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 7,
+      "spec": [
+        {
+          "value": 15,
+          "source": "MIU + Mechadendrite Techsorcist"
+        }
+      ]
+    },
+    {
+      "id": "riparare-tecnologia",
+      "category": "competenze-tecniche",
+      "name": "Riparare Tecnologia",
+      "cost": 2,
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 6,
+      "spec": [
+        {
+          "value": 15,
+          "source": "MIU + Mechadendrite Techsorcist"
+        }
+      ]
+    },
+    {
+      "id": "tecnomanzia",
+      "category": "competenze-tecniche",
+      "name": "Tecnomanzia",
+      "cost": 2,
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 4,
+      "spec": [
+        {
+          "value": 15,
+          "source": "MIU + Mechadendrite Techsorcist"
+        }
+      ]
+    },
+    {
+      "id": "pilotare-navette",
+      "category": "competenze-tecniche",
+      "name": "Pilotare Navette",
+      "cost": 2,
+      "stats": [
+        "Qu",
+        "In"
+      ],
+      "ranks": 1,
+      "spec": []
+    },
+    {
+      "id": "gotico-scritto",
+      "category": "lingue",
+      "name": "Gotico scritto",
+      "cost": 2,
+      "stats": [
+        "Re",
+        "Re"
+      ],
+      "ranks": 1,
+      "spec": []
+    }
+  ],
+  "implants": [
+    {
+      "id": "mechadendrite-techsorcist",
+      "name": "Mechadendrite da Techsorcist",
+      "description": "Arto meccanico dorsale con data-gate esagrammiche. Protegge da scrap-code durante l'interfaccia con spiriti macchina infetti.",
+      "grants": [
+        {
+          "target": "skill:uso-tecnologia",
+          "type": "spec",
+          "value": 5,
+          "note": "parte del +15 combinato con MIU"
+        },
+        {
+          "target": "special",
+          "note": "-10 prove sociali non intimidatorie (inquietante)"
+        },
+        {
+          "target": "special",
+          "note": "Interfaccia protetta con sistemi corrotti"
+        }
+      ]
+    },
+    {
+      "id": "augur-array",
+      "name": "Augur Array (Sensori Bionici)",
+      "description": "Suite sensoriale lato destro del viso: lenti spettrografiche, sensori biochimici, micro-aghi retrattili. Ricalibrato per firme Warp.",
+      "grants": [
+        {
+          "target": "skill:percezione",
+          "type": "spec",
+          "value": 10
+        },
+        {
+          "target": "skill:intuizione",
+          "type": "spec",
+          "value": 10
+        },
+        {
+          "target": "skill:consapevolezza",
+          "type": "spec",
+          "value": 10
+        },
+        {
+          "target": "skill:resistenza-psi",
+          "type": "spec",
+          "value": 10
+        },
+        {
+          "target": "special",
+          "note": "Dark Vision; analisi chimico-biologica di contatto"
+        }
+      ]
+    },
+    {
+      "id": "miu",
+      "name": "MIU (Mind Impulse Unit)",
+      "description": "Interfaccia neurale diretta alla base del cranio. Comunione con spiriti macchina senza intermediari.",
+      "grants": [
+        {
+          "target": "skill:uso-tecnologia",
+          "type": "spec",
+          "value": 10,
+          "note": "parte del +15 combinato con Mechadendrite"
+        },
+        {
+          "target": "special",
+          "note": "+5 Pilotare/Operare macchinari"
+        }
+      ]
+    },
+    {
+      "id": "autosanguine",
+      "name": "Autosanguine",
+      "description": "Nano-macchine nel flusso sanguigno: riparano tessuti, combattono patogeni, stabilizzano ferite.",
+      "grants": [
+        {
+          "target": "special",
+          "note": "Rigenera 1 PF/ora di riposo"
+        },
+        {
+          "target": "special",
+          "note": "+10 RR vs malattie, veleni, infezioni"
+        },
+        {
+          "target": "special",
+          "note": "Stabilizzazione automatica sotto 0 PF (+10)"
+        }
+      ]
+    },
+    {
+      "id": "innesto-muscolare",
+      "name": "Innesto Muscolare Sintetico",
+      "description": "Fibre muscolari artificiali sotto la pelle. Invisibili — non sembra forte, ma lo è.",
+      "grants": [
+        {
+          "target": "skill:wp-ascia-potenza",
+          "type": "spec",
+          "value": 5
+        },
+        {
+          "target": "skill:wp-arma-bianca",
+          "type": "spec",
+          "value": 2
+        },
+        {
+          "target": "special",
+          "note": "+5 bonus St effettivo su prove di forza; +2 danni mischia"
+        }
+      ]
+    },
+    {
+      "id": "capacitore-luminen",
+      "name": "Capacitore Luminen",
+      "description": "Accumulatore bioelettrico nel sistema nervoso. Le mani crepitano di archi voltaici prima della scarica.",
+      "grants": [
+        {
+          "target": "weapon:scarica-luminen",
+          "type": "enable"
+        },
+        {
+          "target": "special",
+          "note": "+5 Tech-Use per riparazioni d'emergenza; alimenta dispositivi a bassa potenza; ricarica 3 round"
+        }
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "id": "strumento-omnissiano",
+      "name": "Strumento Omnissiano (Power Axe)",
+      "obFormula": "bonusTot:St + rankBonus:wp-ascia-potenza + spec:wp-ascia-potenza",
+      "fumble": "01-03",
+      "range": null,
+      "damage": "ascia 2H + campo energetico",
+      "size": "M",
+      "damageType": "Slash/Energy",
+      "notes": "Campo energetico ignora armatura non-energetica. +5 Tech-Use come combi-tool improvvisato."
+    },
+    {
+      "id": "arma-bianca",
+      "name": "Coltello/Pugnale del Mechanicus",
+      "obFormula": "bonusTot:St + rankBonus:wp-arma-bianca + 2",
+      "fumble": "01-04",
+      "range": null,
+      "damage": "pugnale + 2",
+      "size": "S",
+      "damageType": "Slash/Puncture",
+      "notes": "Ex strumento da dissezione xenos. Combinabile coi micro-aghi dell'Augur Array."
+    },
+    {
+      "id": "scarica-luminen",
+      "name": "Scarica Luminen",
+      "obFormula": "bonusTot:Sd + rankBonus:channeling",
+      "fumble": "01-08",
+      "range": "contatto",
+      "damage": "fulmine medio",
+      "size": null,
+      "damageType": "Electricity",
+      "notes": "+10 vs bersagli metallici/cibernetici. Ricarica 3 round. Su fumble: metà danno a sé."
+    },
+    {
+      "id": "laspistol",
+      "name": "Laspistol (qualità comune)",
+      "obFormula": "bonusTot:Qu + rankBonus:wp-pistola",
+      "fumble": "01-05",
+      "range": "30m",
+      "damage": "pistola energia leggera",
+      "size": "S",
+      "damageType": "Heat (Energy)",
+      "ammo": "Cella 30 colpi",
+      "notes": "Portata per regolamento."
+    },
+    {
+      "id": "needle-pistol",
+      "name": "Pistola ad Aghi (qualità buona)",
+      "obFormula": "bonusTot:Qu + rankBonus:wp-pistola",
+      "fumble": "01-04",
+      "range": "20m",
+      "damage": "perforazione bassa + tossina",
+      "size": "T",
+      "damageType": "Puncture + Poison",
+      "ammo": "Caricatore 12 aghi (sedativo/neurotossina/anti-corruzione sperimentale)",
+      "notes": "Residuo carriera Xenogenetista. Silenziosa, nessun flash."
+    }
+  ],
+  "armour": [
+    {
+      "name": "Enforcer Light Carapace",
+      "armourBonus": 15,
+      "magicBonus": 0,
+      "armourPenalty": -5,
+      "weight": "media",
+      "notes": "Tonaca rosso ruggine sopra"
+    },
+    {
+      "name": "The Flesh is Weak (impianti)",
+      "armourBonus": 5,
+      "magicBonus": 0,
+      "armourPenalty": 0,
+      "weight": null,
+      "notes": "Bonus passivo dalla densità di impianti"
+    }
+  ],
+  "counters": {
+    "fate": 3,
+    "insanity": 5,
+    "corruption": -3,
+    "hp": null,
+    "pp": null
+  },
+  "equipment": [
+    {
+      "name": "Combi-tool",
+      "weight": "1 kg"
+    },
+    {
+      "name": "Sacri unguenti",
+      "weight": "0.5 kg"
+    },
+    {
+      "name": "Incenso binario",
+      "weight": "0.2 kg"
+    },
+    {
+      "name": "Bastoncini di incenso (3D10)",
+      "weight": "0.3 kg",
+      "notes": "Rituale Ordine delle Rune d'Ossa"
+    },
+    {
+      "name": "Ossa di dubbia origine (2D10)",
+      "weight": "0.5 kg",
+      "notes": "Strumenti divinatori per esorcismi"
+    },
+    {
+      "name": "Libro delle Cinque Rune",
+      "weight": "1 kg",
+      "notes": "+5 a Tecno-Eresie quando consultato"
+    },
+    {
+      "name": "Dataslate",
+      "weight": "0.5 kg"
+    },
+    {
+      "name": "Brillampada",
+      "weight": "0.3 kg"
+    },
+    {
+      "name": "Guanti chirurgici (3 paia)",
+      "notes": "Logori, macchiati"
+    },
+    {
+      "name": "Sigillo Ordo Malleus",
+      "notes": "Saldato sulla clavicola"
+    },
+    {
+      "name": "Micro-bead"
+    },
+    {
+      "name": "Void suit",
+      "weight": "8 kg"
+    },
+    {
+      "name": "Contenitore campioni sigillato",
+      "weight": "1 kg"
+    },
+    {
+      "name": "Multi-key",
+      "weight": "0.2 kg"
+    },
+    {
+      "name": "Zaino",
+      "weight": "1 kg"
+    },
+    {
+      "name": "Aghi sedativo (x10)",
+      "notes": "Incoscienza in 1d4 round"
+    },
+    {
+      "name": "Aghi neurotossina (x5)",
+      "notes": "Letale, RR Co"
+    },
+    {
+      "name": "Aghi anti-corruzione sperimentali (x3)",
+      "notes": "Efficacia non garantita"
+    },
+    {
+      "name": "Celle ricarica laspistol (x2)",
+      "weight": "0.3 kg"
+    }
+  ],
+  "gmNotes": [
+    {
+      "date": "2026-07-22",
+      "note": "Sforamento 12 DP: da valutare (nasce dalle 4 skill aggiunte su richiesta GM)"
+    },
+    {
+      "date": "2026-07-22",
+      "note": "Discrepanze manuale Tecno-Esorcista da risolvere: origine Forge World vs Mondo Primitivo; conversione da Genetor non prevista; Servitore da Combattimento mancante; armatura ed armi non conformi all'equip iniziale"
+    }
+  ],
+  "history": [
+    {
+      "version": 1,
+      "timestamp": "2026-07-22T10:00:00Z",
+      "label": "Creazione iniziale livello 6, 350 DP"
+    },
+    {
+      "version": 2,
+      "timestamp": "2026-07-22T11:00:00Z",
+      "label": "Integrazioni manuale: Follia 5, Corruzione -3, equip Rune d'Ossa, Tecno-Eresie"
+    },
+    {
+      "version": 3,
+      "timestamp": "2026-07-22T12:00:00Z",
+      "label": "Skill GM: Medicina cost 4 +15, Xenologia +10, Archeotecnologia +10, Mutanti cost 6 (totale 362 DP)"
+    }
+  ]
+}

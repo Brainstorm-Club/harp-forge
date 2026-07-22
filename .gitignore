@@ -1,0 +1,11 @@
+node_modules
+dist
+*.local
+.DS_Store
+node_modules/.tmp
+.vite
+coverage
+
+# Real player character sheets — source material, kept local, NOT published.
+# (The canonical fixture lives as JSON in src/fixtures/.)
+assets/*.pdf
