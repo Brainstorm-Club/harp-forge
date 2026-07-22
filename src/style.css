@@ -113,7 +113,8 @@ a:hover { color: var(--accent); }
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
 }
-.brand { display: flex; align-items: baseline; gap: 0.6rem; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; }
+.brand__logo { width: 30px; height: 30px; border-radius: 7px; display: block; }
 .brand__mark {
   font-family: var(--font-display);
   font-weight: 700;

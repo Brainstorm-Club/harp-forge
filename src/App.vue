@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import { useTheme } from '@/composables/useTheme'
+import brainLogo from '@/assets/brain-badge.png'
 
 const { theme, toggle } = useTheme()
 </script>
@@ -9,6 +10,7 @@ const { theme, toggle } = useTheme()
   <header class="site-header">
     <div class="site-header__inner">
       <RouterLink class="brand" to="/">
+        <img class="brand__logo" :src="brainLogo" alt="" width="30" height="30" />
         <span class="brand__mark">harp<span class="brand__spark">·</span>forge</span>
         <span class="brand__tag">Brainstorm Club</span>
       </RouterLink>

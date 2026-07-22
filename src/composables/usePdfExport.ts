@@ -65,7 +65,7 @@ export function usePdfExport() {
       try {
         field.setText(value)
         if (LARGE_TEXT.test(name)) field.setFontSize(9)
-        else if (STAT_CELL.test(name)) field.setFontSize(6)
+        else if (STAT_CELL.test(name)) field.setFontSize(5)
         field.updateAppearances(font)
       } catch {
         // Odd field state — skip rather than abort the whole export.
