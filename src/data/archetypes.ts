@@ -323,6 +323,6 @@ const sid64 = sid64Json as unknown as Character
 
 export const tableCharacters: Archetype[] = [
   { id: 'real-ula', name: ula500.identity.name, role: ula500.identity.role ?? 'Techsorcist', blurb: 'La scheda di riferimento del tavolo: Techsorcist ex-Xenogenetista dell\'Ordo Malleus. 48 abilità, 362 DP.', character: ula500 },
-  { id: 'real-jen', name: jen.identity.name, role: jen.identity.role ?? 'Assassino', blurb: 'Assassino del ciclo di Korvaal, "lo Xenocida": furtività, veleni, travestimenti e morte silenziosa.', character: jen },
+  { id: 'real-jen', name: jen.identity.name, role: jen.identity.role ?? 'Siniscalco', blurb: 'Siniscalco della dinastia: diplomatico, factotum e spia. Maestro di parola (Diplomazia, Raggirare, Intuizione a rank 10), sapere enciclopedico e Auspex.', character: jen },
   { id: 'real-sid64', name: sid64.identity.name, role: sid64.identity.role ?? 'Tecnoprete', blurb: 'Tecnoprete Malatek: tecnologia proibita e archeotech ai margini del Mechanicus.', character: sid64 },
 ]

@@ -63,6 +63,20 @@ describe('skillTotal (values derived from the canonical pal-ula500.json)', () =>
   })
 })
 
+describe('rank bonus tiers (HARP: 1-10 ×5, 11-20 ×2, 21+ ×1)', () => {
+  it.each([
+    [0, 0],
+    [8, 40],
+    [10, 50],
+    [11, 52],
+    [12, 54],
+    [20, 70],
+    [21, 71],
+  ])('%i ranks → %i', (ranks, bonus) => {
+    expect(skillRankBonus(ranks, harp40k)).toBe(bonus)
+  })
+})
+
 describe('skill sub-bonuses (Uso Tecnologia)', () => {
   const uso = skill('uso-tecnologia')
   it('rank bonus = ranks × 5', () => {

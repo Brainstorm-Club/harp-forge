@@ -8,75 +8,78 @@
     "ruleset": "harp-40k-tavolo-v1"
   },
   "identity": {
-    "name": "Jen lo Xenocida",
-    "race": "umana",
-    "role": "Assassino — Spettro di Korvaal",
+    "name": "Jen Maghwl'",
+    "race": "Umana",
+    "role": "Siniscalco — Consigliere della dinastia",
     "professions": [
       {
-        "name": "Assassino",
-        "level": 7
+        "name": "Siniscalco",
+        "level": 10
       }
     ],
-    "description": "",
-    "history": ""
+    "description": "Siniscalco della dinastia: consigliere, diplomatico e spia. Auspex e nozioni mediche. Patrimonio 235,57 milioni di troni. Nave da sbarco personale.",
+    "history": "",
+    "personal": {
+      "sex": "male"
+    }
   },
   "stats": {
     "values": {
       "St": {
-        "value": 77,
+        "value": 52,
         "race": 0,
         "spec": 0
       },
       "Co": {
-        "value": 81,
-        "race": 3,
+        "value": 80,
+        "race": 2,
         "spec": 0
       },
       "Ag": {
-        "value": 89,
+        "value": 55,
         "race": 0,
         "spec": 0
       },
       "Qu": {
-        "value": 78,
+        "value": 56,
         "race": 0,
         "spec": 0
       },
       "Sd": {
-        "value": 90,
+        "value": 48,
         "race": 0,
-        "spec": 0
+        "spec": 1
       },
       "Re": {
-        "value": 64,
-        "race": 1,
-        "spec": 0
+        "value": 90,
+        "race": 0,
+        "spec": 3
       },
       "In": {
-        "value": 67,
-        "race": 1,
-        "spec": 0
+        "value": 90,
+        "race": 0,
+        "spec": 2
       },
       "Pr": {
-        "value": 53,
+        "value": 90,
         "race": 0,
-        "spec": 0
+        "spec": 2
       }
     }
   },
   "dp": {
-    "budget": 350
+    "budget": 900
   },
   "skills": [
     {
-      "id": "endurance-001",
+      "id": "endurance",
       "category": "fisiche",
       "name": "Endurance",
       "stats": [
         "Co",
         "Sd"
       ],
-      "ranks": 8,
+      "ranks": 11,
       "cost": 2,
       "spec": [
         {
@@ -85,187 +88,139 @@
       ]
     },
     {
-      "id": "power-point-development-002",
-      "category": "fisiche",
-      "name": "Power Point Development",
-      "stats": [
-        "In",
-        "Sd"
-      ],
-      "ranks": 0,
-      "cost": 4,
-      "spec": []
-    },
-    {
-      "id": "recitare-003",
-      "category": "fisiche",
-      "name": "Recitare",
-      "stats": [
-        "Pr",
-        "In"
-      ],
-      "ranks": 3,
-      "spec": []
-    },
-    {
-      "id": "travestirsi-009",
-      "category": "fisiche",
-      "name": "Travestirsi",
-      "stats": [
-        "Pr",
-        "Sd"
-      ],
-      "ranks": 3,
-      "spec": [
-        {
-          "value": 10
-        }
-      ]
-    },
-    {
-      "id": "arrampicarsi-013",
-      "category": "fisiche",
-      "name": "Arrampicarsi",
-      "stats": [
-        "Ag",
-        "St"
-      ],
-      "ranks": 5,
-      "cost": 2,
-      "spec": [
-        {
-          "value": 10
-        }
-      ]
-    },
-    {
-      "id": "volo-planata-levitazione-017",
-      "category": "fisiche",
-      "name": "Volo / planata / levitazione",
-      "stats": [
-        "Ag",
-        "Sd"
-      ],
-      "ranks": 5,
-      "spec": []
-    },
-    {
-      "id": "saltare-018",
-      "category": "fisiche",
-      "name": "Saltare",
-      "stats": [
-        "St",
-        "Ag"
-      ],
-      "ranks": 5,
-      "spec": []
-    },
-    {
-      "id": "correre-019",
-      "category": "fisiche",
-      "name": "Correre",
-      "stats": [
-        "Ag",
-        "In"
-      ],
-      "ranks": 5,
-      "cost": 2,
-      "spec": []
-    },
-    {
-      "id": "nuotare-020",
-      "category": "fisiche",
-      "name": "Nuotare",
-      "stats": [
-        "St",
-        "Ag"
-      ],
-      "ranks": 5,
-      "spec": []
-    },
-    {
-      "id": "schivare-022",
-      "category": "fisiche",
-      "name": "Schivare",
-      "stats": [
-        "Ag",
-        "Qu"
-      ],
-      "ranks": 2,
-      "cost": 15,
-      "spec": [
-        {
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "armature-leggere-023",
-      "category": "fisiche",
-      "name": "Armature leggere",
-      "stats": [
-        "St",
-        "Ag"
-      ],
-      "ranks": 3,
-      "spec": []
-    },
-    {
-      "id": "resistenza-tempra-027",
+      "id": "resistenza-tempra",
       "category": "fisiche",
       "name": "Resistenza Tempra",
       "stats": [
         "Co",
         "Co"
       ],
-      "ranks": 3,
+      "ranks": 9,
       "cost": 2,
       "spec": []
     },
     {
-      "id": "resistenza-volonta-029",
+      "id": "resistenza-psi",
+      "category": "fisiche",
+      "name": "Resistenza PSI",
+      "stats": [
+        "In",
+        "In"
+      ],
+      "ranks": 9,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "resistenza-volonta",
       "category": "fisiche",
       "name": "Resistenza Volontà",
       "stats": [
         "Sd",
         "Sd"
       ],
-      "ranks": 3,
+      "ranks": 12,
       "cost": 2,
       "spec": []
     },
     {
-      "id": "cifrari-di-battaglia-033",
-      "category": "combattimento",
-      "name": "Cifrari di battaglia",
+      "id": "armature-leggere",
+      "category": "fisiche",
+      "name": "Armature leggere",
       "stats": [
-        "In",
-        "Re"
+        "St",
+        "Ag"
+      ],
+      "ranks": 0,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "wp-laser",
+      "category": "combattimento",
+      "name": "WP Laser",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 9,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "wp-taglio-1-mano",
+      "category": "combattimento",
+      "name": "WP taglio 1 mano",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 2,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "wp-pistole",
+      "category": "combattimento",
+      "name": "WP pistole",
+      "stats": [
+        "St",
+        "Ag"
+      ],
+      "ranks": 10,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "ambiente-zero-g",
+      "category": "sopravvivenza",
+      "name": "Ambiente zero -G",
+      "stats": [
+        "Ag",
+        "Sd"
+      ],
+      "ranks": 2,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "recitare",
+      "category": "artistiche",
+      "name": "Recitare",
+      "stats": [
+        "Pr",
+        "In"
       ],
       "ranks": 1,
       "cost": 4,
       "spec": []
     },
     {
-      "id": "demolizioni-034",
-      "category": "combattimento",
-      "name": "Demolizioni",
+      "id": "travestirsi",
+      "category": "artistiche",
+      "name": "Travestirsi",
       "stats": [
-        "Sd",
-        "Ag"
+        "Pr",
+        "Sd"
       ],
-      "ranks": 2,
+      "ranks": 1,
+      "cost": 4,
       "spec": []
     },
     {
-      "id": "wp-armi-laser-036",
-      "category": "combattimento",
-      "name": "WP ....armi LASER",
+      "id": "logica",
+      "category": "mentali",
+      "name": "Logica",
       "stats": [
-        "St",
-        "Ag"
+        "Re",
+        "In"
       ],
-      "ranks": 10,
+      "ranks": 1,
+      "cost": 4,
       "spec": [
         {
           "value": 10
@@ -273,44 +228,7 @@
       ]
     },
     {
-      "id": "wp-armi-taglio-a-una-mano-037",
-      "category": "combattimento",
-      "name": "WP ..ARMI TAGLIO A UNA MANO",
-      "stats": [
-        "St",
-        "Ag"
-      ],
-      "ranks": 7,
-      "spec": [
-        {
-          "value": 10
-        }
-      ]
-    },
-    {
-      "id": "wp-armi-termiche-038",
-      "category": "combattimento",
-      "name": "WP..ARMI TERMICHE",
-      "stats": [
-        "St",
-        "Ag"
-      ],
-      "ranks": 7,
-      "spec": []
-    },
-    {
-      "id": "wp-fucili-a-proiettili-039",
-      "category": "combattimento",
-      "name": "WP..fucili a proiettili",
-      "stats": [
-        "St",
-        "Ag"
-      ],
-      "ranks": 8,
-      "spec": []
-    },
-    {
-      "id": "concentrazione-057",
+      "id": "concentrazione",
       "category": "mentali",
       "name": "Concentrazione",
       "stats": [
@@ -319,42 +237,6 @@
       ],
       "ranks": 2,
       "cost": 4,
-      "spec": []
-    },
-    {
-      "id": "interrogare-067",
-      "category": "interazione",
-      "name": "Interrogare",
-      "stats": [
-        "Pr",
-        "In"
-      ],
-      "ranks": 1,
-      "cost": 4,
-      "spec": []
-    },
-    {
-      "id": "intuizione-072",
-      "category": "interazione",
-      "name": "Intuizione",
-      "stats": [
-        "In",
-        "In"
-      ],
-      "ranks": 2,
-      "cost": 4,
-      "spec": []
-    },
-    {
-      "id": "consapevolezza-076",
-      "category": "percettive",
-      "name": "Consapevolezza",
-      "stats": [
-        "In",
-        "In"
-      ],
-      "ranks": 5,
-      "cost": 4,
       "spec": [
         {
           "value": 10
@@ -362,123 +244,15 @@
       ]
     },
     {
-      "id": "percezione-077",
-      "category": "percettive",
-      "name": "Percezione",
+      "id": "affascinare",
+      "category": "interazione",
+      "name": "Affascinare",
       "stats": [
-        "In",
-        "Re"
-      ],
-      "ranks": 5,
-      "cost": 4,
-      "spec": []
-    },
-    {
-      "id": "cercare-078",
-      "category": "percettive",
-      "name": "Cercare",
-      "stats": [
-        "In",
-        "Re"
-      ],
-      "ranks": 3,
-      "cost": 4,
-      "spec": []
-    },
-    {
-      "id": "lettura-labiale-079",
-      "category": "percettive",
-      "name": "Lettura labiale",
-      "stats": [
-        "In",
-        "Re"
-      ],
-      "ranks": 3,
-      "spec": []
-    },
-    {
-      "id": "sopravvivere-giungla-086",
-      "category": "percettive",
-      "name": "Sopravvivere..GIUNGLA",
-      "stats": [
-        "In",
-        "Re"
-      ],
-      "ranks": 3,
-      "spec": []
-    },
-    {
-      "id": "sopravvivere-deserto-087",
-      "category": "percettive",
-      "name": "Sopravvivere....DESERTO",
-      "stats": [
-        "In",
-        "Re"
-      ],
-      "ranks": 3,
-      "spec": []
-    },
-    {
-      "id": "orientarsi-089",
-      "category": "percettive",
-      "name": "Orientarsi",
-      "stats": [
-        "In",
-        "Re"
-      ],
-      "ranks": 5,
-      "spec": []
-    },
-    {
-      "id": "seguire-tracce-090",
-      "category": "percettive",
-      "name": "Seguire tracce",
-      "stats": [
-        "Sd",
+        "Pr",
         "In"
       ],
-      "ranks": 3,
-      "spec": []
-    },
-    {
-      "id": "muoversi-in-silenzio-093",
-      "category": "sotterfugio",
-      "name": "Muoversi in silenzio",
-      "stats": [
-        "Sd",
-        "Ag"
-      ],
-      "ranks": 7,
-      "spec": [
-        {
-          "value": 20
-        }
-      ]
-    },
-    {
-      "id": "nascondersi-094",
-      "category": "sotterfugio",
-      "name": "Nascondersi",
-      "stats": [
-        "Sd",
-        "Ag"
-      ],
-      "ranks": 7,
-      "spec": [
-        {
-          "value": 20
-        }
-      ]
-    },
-    {
-      "id": "sistemi-di-sicurezza-095",
-      "category": "sotterfugio",
-      "name": "Sistemi di sicurezza",
-      "stats": [
-        "In",
-        "Re"
-      ],
-      "ranks": 5,
+      "ranks": 2,
+      "cost": 4,
       "spec": [
         {
           "value": 5
@@ -486,66 +260,14 @@
       ]
     },
     {
-      "id": "pedinare-096",
-      "category": "sotterfugio",
-      "name": "Pedinare",
-      "stats": [
-        "In",
-        "Pr"
-      ],
-      "ranks": 2,
-      "spec": []
-    },
-    {
-      "id": "raccogliere-informazioni-097",
-      "category": "sotterfugio",
-      "name": "Raccogliere informazioni",
+      "id": "diplomazia",
+      "category": "interazione",
+      "name": "Diplomazia",
       "stats": [
         "Pr",
         "In"
       ],
-      "ranks": 2,
-      "spec": []
-    },
-    {
-      "id": "tiratore-scelto-098",
-      "category": "sotterfugio",
-      "name": "Tiratore scelto",
-      "stats": [
-        "Sd",
-        "Ag"
-      ],
-      "ranks": 5,
-      "spec": [
-        {
-          "value": 10
-        }
-      ]
-    },
-    {
-      "id": "imboscata-099",
-      "category": "sotterfugio",
-      "name": "Imboscata",
-      "stats": [
-        "Sd",
-        "Ag"
-      ],
-      "ranks": 5,
-      "spec": [
-        {
-          "value": 10
-        }
-      ]
-    },
-    {
-      "id": "uso-veleni-102",
-      "category": "sotterfugio",
-      "name": "Uso veleni",
-      "stats": [
-        "In",
-        "Sd"
-      ],
-      "ranks": 5,
+      "ranks": 10,
       "cost": 4,
       "spec": [
         {
@@ -554,180 +276,447 @@
       ]
     },
     {
-      "id": "dottrina-imperiale-108",
+      "id": "interrogare",
+      "category": "interazione",
+      "name": "Interrogare",
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 6,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "leadership",
+      "category": "interazione",
+      "name": "Leadership",
+      "stats": [
+        "Pr",
+        "Pr"
+      ],
+      "ranks": 5,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "contrattare",
+      "category": "interazione",
+      "name": "Contrattare",
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 6,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "raggirare",
+      "category": "interazione",
+      "name": "Raggirare",
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 10,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "intimidire",
+      "category": "interazione",
+      "name": "Intimidire",
+      "stats": [
+        "Pr",
+        "St"
+      ],
+      "ranks": 4,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "intuizione",
+      "category": "percettive",
+      "name": "Intuizione",
+      "stats": [
+        "In",
+        "In"
+      ],
+      "ranks": 10,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "consapevolezza",
+      "category": "percettive",
+      "name": "Consapevolezza",
+      "stats": [
+        "In",
+        "In"
+      ],
+      "ranks": 10,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "percezione",
+      "category": "percettive",
+      "name": "Percezione",
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 10,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "cercare",
+      "category": "percettive",
+      "name": "Cercare",
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 5,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "lettura-labiale",
+      "category": "percettive",
+      "name": "Lettura labiale",
+      "stats": [
+        "In",
+        "Re"
+      ],
+      "ranks": 3,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "nascondersi",
+      "category": "sotterfugio",
+      "name": "Nascondersi",
+      "stats": [
+        "Sd",
+        "Ag"
+      ],
+      "ranks": 3,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "raccogliere-informazioni",
+      "category": "sotterfugio",
+      "name": "Raccogliere informazioni",
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 4,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "conoscenza-bassifondi",
+      "category": "sotterfugio",
+      "name": "Conoscenza bassifondi",
+      "stats": [
+        "Pr",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "adeptus-arbites",
+      "category": "conoscenze-comuni",
+      "name": "Adeptus Arbites",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "administratum",
+      "category": "conoscenze-comuni",
+      "name": "Administratum",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "culto-mechanicus",
+      "category": "conoscenze-comuni",
+      "name": "Culto Mechanicus",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "dottrina-imperiale",
       "category": "conoscenze-comuni",
       "name": "Dottrina imperiale",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 4,
+      "ranks": 2,
       "cost": 2,
       "spec": []
     },
     {
-      "id": "storia-imperiale-112",
+      "id": "ecclesiarchia",
+      "category": "conoscenze-comuni",
+      "name": "Ecclesiarchia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "marina-imperiale",
+      "category": "conoscenze-comuni",
+      "name": "Marina Imperiale",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": []
+    },
+    {
+      "id": "storia-imperiale",
       "category": "conoscenze-comuni",
       "name": "Storia Imperiale",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 2,
+      "ranks": 4,
+      "cost": 4,
       "spec": []
     },
     {
-      "id": "uso-funi-115",
+      "id": "imperium",
       "category": "conoscenze-comuni",
-      "name": "Uso funi",
+      "name": "Imperium",
       "stats": [
         "Re",
-        "Ag"
+        "In"
       ],
       "ranks": 2,
-      "spec": []
+      "cost": 2,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
     },
     {
-      "id": "pronto-soccorso-116",
+      "id": "malavita",
+      "category": "conoscenze-comuni",
+      "name": "Malavita",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "pronto-soccorso",
       "category": "conoscenze-comuni",
       "name": "Pronto soccorso",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 2,
-      "cost": 2,
+      "ranks": 8,
+      "cost": 8,
       "spec": []
     },
     {
-      "id": "segnali-117",
-      "category": "conoscenze-comuni",
-      "name": "Segnali",
-      "stats": [
-        "Re",
-        "In"
-      ],
-      "ranks": 1,
-      "spec": []
-    },
-    {
-      "id": "artigiano-fabbro-118",
-      "category": "conoscenze-comuni",
-      "name": "Artigiano.....fabbro",
-      "stats": [
-        "Re",
-        "Ag"
-      ],
-      "ranks": 1,
-      "spec": []
-    },
-    {
-      "id": "artigiano-legno-119",
-      "category": "conoscenze-comuni",
-      "name": "Artigiano.....legno",
-      "stats": [
-        "Re",
-        "Ag"
-      ],
-      "ranks": 2,
-      "spec": []
-    },
-    {
-      "id": "gotico-scritto-123",
-      "category": "conoscenze-comuni",
+      "id": "gotico-scritto",
+      "category": "lingue",
       "name": "Gotico scritto",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 2,
+      "ranks": 0,
       "cost": 2,
       "spec": [
         {
-          "value": -5
+          "value": 20
         }
       ]
     },
     {
-      "id": "alto-gotico-scritto-124",
-      "category": "conoscenze-comuni",
+      "id": "alto-gotico-scritto",
+      "category": "lingue",
       "name": "Alto gotico scritto",
       "stats": [
         "Re",
         "Re"
       ],
-      "ranks": 1,
+      "ranks": 2,
+      "cost": 2,
       "spec": [
         {
-          "value": -25
+          "value": 10
         }
       ]
     },
     {
-      "id": "alto-gotico-parlato-125",
-      "category": "conoscenze-comuni",
+      "id": "alto-gotico-parlato",
+      "category": "lingue",
       "name": "Alto Gotico parlato",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 1,
+      "ranks": 2,
+      "cost": 2,
       "spec": [
         {
-          "value": -15
+          "value": 10
         }
       ]
     },
     {
-      "id": "biologia-129",
+      "id": "burocrazia-imperiale",
+      "category": "conoscenze-accademiche",
+      "name": "Burocrazia imperiale",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 2,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "biologia",
       "category": "conoscenze-accademiche",
       "name": "Biologia",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 0,
-      "cost": 10,
+      "ranks": 2,
+      "cost": 2,
       "spec": []
     },
     {
-      "id": "botanica-130",
-      "category": "conoscenze-accademiche",
-      "name": "Botanica",
-      "stats": [
-        "Re",
-        "In"
-      ],
-      "ranks": 0,
-      "cost": 10,
-      "spec": []
-    },
-    {
-      "id": "chimica-131",
-      "category": "conoscenze-accademiche",
-      "name": "Chimica",
-      "stats": [
-        "Re",
-        "In"
-      ],
-      "ranks": 0,
-      "cost": 8,
-      "spec": []
-    },
-    {
-      "id": "crittografia-132",
+      "id": "crittografia",
       "category": "conoscenze-accademiche",
       "name": "Crittografia",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 1,
-      "cost": 8,
-      "spec": []
+      "ranks": 2,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
     },
     {
-      "id": "tattica-imperium-153",
+      "id": "legge-imperiale",
+      "category": "conoscenze-accademiche",
+      "name": "Legge Imperiale",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 5,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "leggende-imperium",
+      "category": "conoscenze-accademiche",
+      "name": "Leggende Imperium",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 4,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "tattica-imperium",
       "category": "conoscenze-accademiche",
       "name": "Tattica Imperium",
       "stats": [
@@ -735,208 +724,117 @@
         "In"
       ],
       "ranks": 2,
+      "cost": 4,
       "spec": []
     },
     {
-      "id": "geomanzia-154",
+      "id": "geomanzia",
       "category": "conoscenze-accademiche",
       "name": "Geomanzia",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 0,
-      "cost": 20,
-      "spec": []
+      "ranks": 2,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 5
+        }
+      ]
     },
     {
-      "id": "medicina-155",
+      "id": "medicina",
       "category": "conoscenze-accademiche",
       "name": "Medicina",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 0,
-      "cost": 15,
+      "ranks": 4,
+      "cost": 4,
       "spec": []
     },
     {
-      "id": "planetomanzia-156",
+      "id": "planetomanzia",
       "category": "conoscenze-accademiche",
       "name": "Planetomanzia",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 0,
-      "cost": 15,
+      "ranks": 4,
+      "cost": 6,
       "spec": []
     },
     {
-      "id": "xenologia-157",
+      "id": "xenologia",
       "category": "conoscenze-accademiche",
       "name": "Xenologia",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 0,
-      "cost": 15,
+      "ranks": 4,
+      "cost": 4,
       "spec": []
     },
     {
-      "id": "numerologia-158",
+      "id": "numerologia",
       "category": "conoscenze-accademiche",
       "name": "Numerologia",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 0,
-      "cost": 15,
+      "ranks": 4,
+      "cost": 4,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "viaggi-spaziali",
+      "category": "conoscenze-accademiche",
+      "name": "Viaggi spaziali",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 4,
+      "cost": 4,
       "spec": []
     },
     {
-      "id": "astronavigazione-160",
+      "id": "astronavigazione",
       "category": "conoscenze-accademiche",
       "name": "Astronavigazione",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 0,
-      "cost": 15,
+      "ranks": 1,
+      "cost": 4,
       "spec": []
     },
     {
-      "id": "archeologia-161",
+      "id": "archeologia",
       "category": "conoscenze-accademiche",
       "name": "Archeologia",
       "stats": [
         "Re",
         "In"
       ],
-      "ranks": 0,
-      "cost": 10,
+      "ranks": 4,
+      "cost": 4,
       "spec": []
     },
     {
-      "id": "astromanzia-163",
+      "id": "araldica-imperiale",
       "category": "conoscenze-accademiche",
-      "name": "Astromanzia",
-      "stats": [
-        "Re",
-        "In"
-      ],
-      "ranks": 0,
-      "cost": 15,
-      "spec": []
-    },
-    {
-      "id": "adeptus-mechanicus-166",
-      "category": "conoscenze-proibite",
-      "name": "Adeptus Mechanicus",
-      "stats": [
-        "Re",
-        "In"
-      ],
-      "ranks": 0,
-      "cost": 10,
-      "spec": [
-        {
-          "value": -10
-        }
-      ]
-    },
-    {
-      "id": "archeotech-167",
-      "category": "conoscenze-proibite",
-      "name": "Archeotech",
-      "stats": [
-        "Re",
-        "In"
-      ],
-      "ranks": 0,
-      "cost": 20,
-      "spec": [
-        {
-          "value": -30
-        }
-      ]
-    },
-    {
-      "id": "immaterium-172",
-      "category": "conoscenze-proibite",
-      "name": "Immaterium",
-      "stats": [
-        "In",
-        "Sd"
-      ],
-      "ranks": 1,
-      "cost": 4,
-      "spec": []
-    },
-    {
-      "id": "ordo-inquisitorii-173",
-      "category": "conoscenze-proibite",
-      "name": "Ordo inquisitorii",
-      "stats": [
-        "Re",
-        "In"
-      ],
-      "ranks": 0,
-      "cost": 6,
-      "spec": []
-    },
-    {
-      "id": "eresia-174",
-      "category": "conoscenze-proibite",
-      "name": "Eresia",
-      "stats": [
-        "Re",
-        "In"
-      ],
-      "ranks": 1,
-      "cost": 4,
-      "spec": []
-    },
-    {
-      "id": "xenotech-178",
-      "category": "conoscenze-proibite",
-      "name": "Xenotech",
-      "stats": [
-        "Re",
-        "In"
-      ],
-      "ranks": 0,
-      "cost": 6,
-      "spec": [
-        {
-          "value": -20
-        }
-      ]
-    },
-    {
-      "id": "xenotech-179",
-      "category": "conoscenze-proibite",
-      "name": "Xenotech",
-      "stats": [
-        "Re",
-        "In"
-      ],
-      "ranks": 0,
-      "cost": 6,
-      "spec": [
-        {
-          "value": -20
-        }
-      ]
-    },
-    {
-      "id": "uso-tecnologia-183",
-      "category": "competenze-tecniche",
-      "name": "Uso Tecnologia",
+      "name": "Araldica imperiale",
       "stats": [
         "Re",
         "In"
@@ -946,7 +844,67 @@
       "spec": []
     },
     {
-      "id": "riparare-tecnologia-184",
+      "id": "astromanzia",
+      "category": "conoscenze-accademiche",
+      "name": "Astromanzia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 1,
+      "cost": 4,
+      "spec": []
+    },
+    {
+      "id": "adeptus-mechanicus",
+      "category": "conoscenze-proibite",
+      "name": "Adeptus Mechanicus",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 8,
+      "spec": [
+        {
+          "value": -10
+        }
+      ]
+    },
+    {
+      "id": "archeotech",
+      "category": "conoscenze-proibite",
+      "name": "Archeotech",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 0,
+      "cost": 6,
+      "spec": [
+        {
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "uso-tecnologia",
+      "category": "competenze-tecniche",
+      "name": "Uso Tecnologia",
+      "stats": [
+        "Re",
+        "In"
+      ],
+      "ranks": 10,
+      "cost": 2,
+      "spec": [
+        {
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "riparare-tecnologia",
       "category": "competenze-tecniche",
       "name": "Riparare tecnologia",
       "stats": [
@@ -954,76 +912,36 @@
         "In"
       ],
       "ranks": 1,
-      "cost": 6,
-      "spec": []
+      "cost": 5,
+      "spec": [
+        {
+          "value": -10
+        }
+      ]
     },
     {
-      "id": "tecnomanzia-185",
+      "id": "tecnomanzia",
       "category": "competenze-tecniche",
       "name": "Tecnomanzia",
       "stats": [
         "Pr",
         "In"
       ],
-      "ranks": 0,
-      "cost": 20,
+      "ranks": 1,
+      "cost": 15,
       "spec": [
         {
-          "value": -30
+          "value": -20
         }
       ]
-    },
-    {
-      "id": "pilotare-ornitottero-186",
-      "category": "competenze-tecniche",
-      "name": "Pilotare.....ornitottero",
-      "stats": [
-        "Qu",
-        "In"
-      ],
-      "ranks": 1,
-      "spec": []
-    },
-    {
-      "id": "pilotare-velivoli-atmosferici-187",
-      "category": "competenze-tecniche",
-      "name": "Pilotare..VELIVOLI ATMOSFERICI",
-      "stats": [
-        "Qu",
-        "In"
-      ],
-      "ranks": 1,
-      "spec": []
-    },
-    {
-      "id": "pilotare-imbarcazioni-fuoribordo-188",
-      "category": "competenze-tecniche",
-      "name": "Pilotare..IMBARCAZIONI FUORIBORDO",
-      "stats": [
-        "Qu",
-        "In"
-      ],
-      "ranks": 1,
-      "spec": []
-    },
-    {
-      "id": "guidare-veicoli-terrestri-189",
-      "category": "competenze-tecniche",
-      "name": "Guidare...VEICOLI TERRESTRI",
-      "stats": [
-        "Qu",
-        "In"
-      ],
-      "ranks": 3,
-      "spec": []
     }
   ],
   "implants": [],
   "weapons": [],
   "armour": [],
   "counters": {
-    "fate": 0,
-    "insanity": 0,
+    "fate": 4,
+    "insanity": 4,
     "corruption": 0
   }
 }

@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCharacterStore } from '@/stores/character'
-import { ula500 } from '@/fixtures'
 import { archetypes, tableCharacters, type Archetype } from '@/data/archetypes'
 
 const store = useCharacterStore()
@@ -17,12 +16,6 @@ function newCharacter() {
 
 function open(id: string) {
   store.load(id)
-  router.push('/scheda')
-}
-
-function loadExample() {
-  store.importJson(JSON.stringify(ula500))
-  store.character.id = crypto.randomUUID() // a fresh copy, not the fixture id
   router.push('/scheda')
 }
 
@@ -63,7 +56,6 @@ function professions(c: (typeof store.roster)[number]): string {
     <div class="toolbar">
       <button class="btn" type="button" @click="newCharacter">＋ Nuova scheda</button>
       <button class="btn btn--ghost" type="button" @click="pickFile">⤒ Importa JSON</button>
-      <button class="btn btn--ghost" type="button" @click="loadExample">Carica esempio (Ula500)</button>
       <input ref="fileInput" type="file" accept="application/json,.json" hidden @change="onFile" />
     </div>
     <p v-if="importError" class="hint" role="alert">{{ importError }}</p>

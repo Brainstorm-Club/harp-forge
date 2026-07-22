@@ -61,9 +61,17 @@ export function savingThrows(character: Character): SavingThrows {
   }
 }
 
-/** Rank contribution to a skill: ranks × the ruleset's per-rank bonus. */
+/**
+ * Rank contribution to a skill (HARP tiered progression, verified on real
+ * sheets): ranks 1-10 give the ruleset's per-rank bonus (5), ranks 11-20 give
+ * +2 each, ranks 21+ give +1 each.
+ *   8→40, 10→50, 11→52, 12→54, 20→70, 21→71.
+ */
 export function skillRankBonus(ranks: number, ruleset: Ruleset): number {
-  return ranks * ruleset.rankBonus
+  const tier1 = Math.min(ranks, 10) * ruleset.rankBonus
+  const tier2 = Math.max(0, Math.min(ranks, 20) - 10) * 2
+  const tier3 = Math.max(0, ranks - 20) * 1
+  return tier1 + tier2 + tier3
 }
 
 /** Sum of a skill's special bonuses (implants, gear). */
