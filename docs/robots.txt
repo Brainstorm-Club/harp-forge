@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brainstorm-club.github.io/harp-forge/sitemap.xml

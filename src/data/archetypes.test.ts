@@ -1,0 +1,37 @@
+import { describe, it, expect } from 'vitest'
+import { archetypes } from './archetypes'
+import { harp40k } from './rulesets/harp40k'
+import { dpBudgetStatus, skillTotal } from '@/engine/calculations'
+import { STAT_KEYS } from '@/types/character'
+
+describe('Rogue Trader archetypes', () => {
+  it('there are 6 distinct archetypes with unique ids', () => {
+    expect(archetypes).toHaveLength(6)
+    expect(new Set(archetypes.map((a) => a.id)).size).toBe(6)
+  })
+
+  for (const a of archetypes) {
+    describe(a.name, () => {
+      const c = a.character
+      it('has identity, role, ≥12 skills and 8 stats', () => {
+        expect(c.identity.name).toBeTruthy()
+        expect(c.identity.role).toBeTruthy()
+        expect(c.skills.length).toBeGreaterThanOrEqual(12)
+        expect(STAT_KEYS.every((k) => typeof c.stats.values[k].value === 'number')).toBe(true)
+      })
+
+      it('every skill total is a finite number', () => {
+        for (const s of c.skills) {
+          expect(Number.isFinite(skillTotal(s, c.stats.values, harp40k))).toBe(true)
+        }
+      })
+
+      it('DP spent is within the 350 budget (no accidental over-spend)', () => {
+        const status = dpBudgetStatus(c, harp40k)
+        expect(status.unresolved).toEqual([])
+        expect(status.spent).toBeGreaterThan(150)
+        expect(status.spent).toBeLessThanOrEqual(350)
+      })
+    })
+  }
+})

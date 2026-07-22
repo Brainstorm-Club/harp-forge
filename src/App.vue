@@ -4,9 +4,18 @@ import { useTheme } from '@/composables/useTheme'
 import brainLogo from '@/assets/brain-badge.png'
 
 const { theme, toggle } = useTheme()
+
+function skipToContent() {
+  const el = document.getElementById('contenuto')
+  if (el) {
+    el.focus()
+    el.scrollIntoView()
+  }
+}
 </script>
 
 <template>
+  <a class="skip-link" href="#contenuto" @click.prevent="skipToContent">Salta al contenuto</a>
   <header class="site-header">
     <div class="site-header__inner">
       <RouterLink class="brand" to="/">

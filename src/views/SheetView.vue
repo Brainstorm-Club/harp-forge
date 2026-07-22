@@ -71,7 +71,7 @@ const counters = computed(() => character.value.counters)
 </script>
 
 <template>
-  <main class="wrap">
+  <main id="contenuto" class="wrap" tabindex="-1">
     <div class="toolbar">
       <button class="btn btn--ghost" type="button" @click="router.push('/')">← Roster</button>
       <button class="btn" type="button" @click="save">💾 Salva</button>
@@ -93,9 +93,9 @@ const counters = computed(() => character.value.counters)
 
     <h3 class="mini">Professioni</h3>
     <div v-for="(p, i) in character.identity.professions" :key="i" class="prof-row">
-      <input v-model="p.name" type="text" placeholder="Professione" />
-      <input v-model.number="p.level" type="number" min="1" class="w-lvl" aria-label="Livello" />
-      <button class="btn btn--ghost btn--sm" type="button" @click="store.removeProfession(i)">✕</button>
+      <input v-model="p.name" type="text" placeholder="Professione" aria-label="Nome professione" />
+      <input v-model.number="p.level" type="number" min="1" class="w-lvl" aria-label="Livello professione" />
+      <button class="btn btn--ghost btn--sm" type="button" aria-label="Rimuovi professione" @click="store.removeProfession(i)">✕</button>
     </div>
     <button class="btn btn--ghost btn--sm" type="button" @click="store.addProfession()">＋ Professione</button>
 
@@ -112,7 +112,16 @@ const counters = computed(() => character.value.counters)
       <span v-else class="badge badge--over">sforamento {{ Math.abs(budget.remaining ?? 0) }}</span>
       · DP da stat {{ dpIncome }}
     </h2>
-    <div class="dpbar"><div class="dpbar__fill" :class="{ over: budget.over }" :style="{ width: Math.min(100, (budget.spent / (budget.budget || 1)) * 100) + '%' }" /></div>
+    <div
+      class="dpbar"
+      role="progressbar"
+      :aria-valuenow="budget.spent"
+      aria-valuemin="0"
+      :aria-valuemax="budget.budget ?? undefined"
+      :aria-label="`DP spesi ${budget.spent} su ${budget.budget}`"
+    >
+      <div class="dpbar__fill" :class="{ over: budget.over }" :style="{ width: Math.min(100, (budget.spent / (budget.budget || 1)) * 100) + '%' }" />
+    </div>
 
     <!-- Stats -->
     <h2>Statistiche</h2>
@@ -123,10 +132,10 @@ const counters = computed(() => character.value.counters)
       <tbody>
         <tr v-for="k in statOptions" :key="k">
           <td>{{ k }}</td>
-          <td class="num"><input v-model.number="character.stats.values[k].value" type="number" class="w-num" /></td>
+          <td class="num"><input v-model.number="character.stats.values[k].value" type="number" class="w-num" :aria-label="`${k} valore`" /></td>
           <td class="num">{{ statBonus(character.stats.values[k].value) }}</td>
-          <td class="num"><input v-model.number="character.stats.values[k].race" type="number" class="w-num" /></td>
-          <td class="num"><input v-model.number="character.stats.values[k].spec" type="number" class="w-num" /></td>
+          <td class="num"><input v-model.number="character.stats.values[k].race" type="number" class="w-num" :aria-label="`${k} modificatore razza`" /></td>
+          <td class="num"><input v-model.number="character.stats.values[k].spec" type="number" class="w-num" :aria-label="`${k} modificatore speciale`" /></td>
           <td class="num total">{{ statTotals[k] }}</td>
           <td class="num">{{ Math.max(0, statBonus(character.stats.values[k].value)) }}</td>
         </tr>
@@ -138,25 +147,25 @@ const counters = computed(() => character.value.counters)
 
     <!-- Skills -->
     <h2>Abilità · {{ character.skills.length }}</h2>
-    <div class="table-scroll">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabella abilità, scorrevole orizzontalmente">
       <table>
         <thead>
-          <tr><th>Nome</th><th>Cat.</th><th>Stat 1</th><th>Stat 2</th><th class="num">Rank</th><th class="num">Cost</th><th class="num">Spec</th><th class="num">Rank+</th><th class="num">Stat+</th><th class="num">Totale</th><th class="num">DP</th><th></th></tr>
+          <tr><th scope="col">Nome</th><th scope="col">Cat.</th><th scope="col">Stat 1</th><th scope="col">Stat 2</th><th scope="col" class="num">Rank</th><th scope="col" class="num">Cost</th><th scope="col" class="num">Spec</th><th scope="col" class="num">Rank+</th><th scope="col" class="num">Stat+</th><th scope="col" class="num">Totale</th><th scope="col" class="num">DP</th><th scope="col"><span class="sr-only">Azioni</span></th></tr>
         </thead>
         <tbody>
           <tr v-for="s in character.skills" :key="s.id">
-            <td><input v-model="s.name" type="text" class="w-name" /></td>
-            <td><input v-model="s.category" type="text" class="w-cat" /></td>
-            <td><select v-model="s.stats[0]"><option v-for="o in statOptions" :key="o" :value="o">{{ o }}</option></select></td>
-            <td><select v-model="s.stats[1]"><option v-for="o in statOptions" :key="o" :value="o">{{ o }}</option></select></td>
-            <td class="num"><input v-model.number="s.ranks" type="number" min="0" class="w-num" /></td>
-            <td class="num"><input v-model.number="s.cost" type="number" min="0" class="w-num" /></td>
-            <td class="num"><input :value="specOf(s)" type="number" class="w-num" @input="setSpec(s, Number(($event.target as HTMLInputElement).value))" /></td>
+            <td><input v-model="s.name" type="text" class="w-name" aria-label="Nome abilità" /></td>
+            <td><input v-model="s.category" type="text" class="w-cat" :aria-label="`Categoria di ${s.name}`" /></td>
+            <td><select v-model="s.stats[0]" :aria-label="`Prima statistica di ${s.name}`"><option v-for="o in statOptions" :key="o" :value="o">{{ o }}</option></select></td>
+            <td><select v-model="s.stats[1]" :aria-label="`Seconda statistica di ${s.name}`"><option v-for="o in statOptions" :key="o" :value="o">{{ o }}</option></select></td>
+            <td class="num"><input v-model.number="s.ranks" type="number" min="0" class="w-num" :aria-label="`Rank di ${s.name}`" /></td>
+            <td class="num"><input v-model.number="s.cost" type="number" min="0" class="w-num" :aria-label="`Costo di ${s.name}`" /></td>
+            <td class="num"><input :value="specOf(s)" type="number" class="w-num" :aria-label="`Spec di ${s.name}`" @input="setSpec(s, Number(($event.target as HTMLInputElement).value))" /></td>
             <td class="num">{{ skillRankBonus(s.ranks, store.ruleset) }}</td>
             <td class="num">{{ skillStatBonus(s, character.stats.values) }}</td>
             <td class="num total">{{ store.skillTotalOf(s) }}</td>
             <td class="num">{{ store.skillDpOf(s) }}</td>
-            <td><button class="btn btn--ghost btn--sm" type="button" @click="store.removeSkill(s.id)">✕</button></td>
+            <td><button class="btn btn--ghost btn--sm" type="button" :aria-label="`Rimuovi ${s.name}`" @click="store.removeSkill(s.id)">✕</button></td>
           </tr>
         </tbody>
       </table>
