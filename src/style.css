@@ -74,7 +74,6 @@ h3.mini { font-family: var(--bsc-font-mono); font-size: var(--bsc-text-sm); colo
 .hint { font-size: var(--bsc-text-xs); color: var(--bsc-text-faint); }
 
 /* Bottone piccolo (variante app del .bsc-btn) */
-.bsc-btn--sm { padding: var(--bsc-space-1) var(--bsc-space-3); font-size: var(--bsc-text-sm); }
 
 /* --- DP bar (progressbar) -------------------------------------------------- */
 .dpbar { height: 8px; background: var(--bsc-surface-2); border-radius: var(--bsc-radius-pill); overflow: hidden; margin: var(--bsc-space-2) 0 var(--bsc-space-4); }
