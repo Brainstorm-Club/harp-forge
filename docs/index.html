@@ -2,6 +2,12 @@
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
+    <!-- Design System BSC: applica il tema persistito prima del CSS (anti-flash) -->
+    <script>
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('bsc-theme') || 'dark')
+      } catch (e) {}
+    </script>
     <link rel="icon" type="image/png" href="/harp-forge/favicon.png" />
     <link rel="apple-touch-icon" href="/harp-forge/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,7 +62,7 @@
         "author": { "@type": "Organization", "name": "Brainstorm Club", "url": "https://www.brainstormclub.it" }
       }
     </script>
-    <script type="module" crossorigin src="/harp-forge/assets/index-DvmjD03q.js"></script>
+    <script type="module" crossorigin src="/harp-forge/assets/index-CKsk1d2i.js"></script>
     <link rel="stylesheet" crossorigin href="/harp-forge/assets/index-ChTtZYqB.css">
   </head>
   <body class="bsc-body">

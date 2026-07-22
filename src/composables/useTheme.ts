@@ -1,33 +1,25 @@
 /**
- * Theme toggle — carbone (dark, default) ↔ carta (light).
- * Persists the choice in localStorage and reflects it on <html data-theme>.
+ * Theme toggle — thin Vue wrapper over the Brainstorm Club Design System's
+ * unified theme module (src/design-system/theme.js). The theme preference is
+ * shared across ALL club apps via the localStorage key `bsc-theme`, and changes
+ * broadcast a `bsc:themechange` event. carbone (dark) is the default.
  */
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
+import { getTheme, setTheme } from '@/design-system/theme.js'
 
 export type Theme = 'dark' | 'light'
-const STORAGE_KEY = 'harp-forge:theme'
 
-function initial(): Theme {
-  const saved = localStorage.getItem(STORAGE_KEY)
-  if (saved === 'light' || saved === 'dark') return saved
-  return 'dark' // carbone default
+const theme = ref<Theme>(getTheme())
+
+if (typeof document !== 'undefined') {
+  document.addEventListener('bsc:themechange', (e) => {
+    theme.value = (e as CustomEvent<{ theme: Theme }>).detail.theme
+  })
+  // Re-affirm the persisted/default theme on load (also fires the event).
+  setTheme(theme.value)
 }
-
-const theme = ref<Theme>(initial())
-
-function apply(t: Theme) {
-  document.documentElement.setAttribute('data-theme', t)
-}
-apply(theme.value)
-
-watch(theme, (t) => {
-  apply(t)
-  localStorage.setItem(STORAGE_KEY, t)
-})
 
 export function useTheme() {
-  const toggle = () => {
-    theme.value = theme.value === 'dark' ? 'light' : 'dark'
-  }
+  const toggle = () => setTheme(theme.value === 'dark' ? 'light' : 'dark')
   return { theme, toggle }
 }
