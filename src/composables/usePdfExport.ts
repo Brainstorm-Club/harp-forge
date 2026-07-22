@@ -53,11 +53,16 @@ export function usePdfExport() {
 
     const { values, unmatched } = mapCharacterToFields(character, ruleset, slotIndex)
 
+    // Tall multiline boxes (description/history/notes, weapon notes) auto-size
+    // their font to the field HEIGHT, which renders the text enormous. Pin a
+    // small fixed size on those; the small grid cells keep auto-sizing fine.
+    const LARGE_TEXT = /\.(description|history|notes)$/
     for (const [name, value] of Object.entries(values)) {
       const field = fieldMap.get(name)
       if (!field) continue
       try {
         field.setText(value)
+        if (LARGE_TEXT.test(name)) field.setFontSize(8)
         field.updateAppearances(font)
       } catch {
         // Odd field state — skip rather than abort the whole export.
