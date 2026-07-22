@@ -53,16 +53,19 @@ export function usePdfExport() {
 
     const { values, unmatched } = mapCharacterToFields(character, ruleset, slotIndex)
 
-    // Tall multiline boxes (description/history/notes, weapon notes) auto-size
-    // their font to the field HEIGHT, which renders the text enormous. Pin a
-    // small fixed size on those; the small grid cells keep auto-sizing fine.
-    const LARGE_TEXT = /\.(description|history|notes)$/
+    // Auto-sized fields misbehave on this template: tall multiline boxes size
+    // the font to the field HEIGHT (text becomes enormous), and the narrow
+    // Stats cells size to height too, overflowing the width and clipping to the
+    // first letter ("Sd" → "S"). Pin explicit sizes on those.
+    const LARGE_TEXT = /\.(description|history|notes)$/ // 9pt ≈ 12px
+    const STAT_CELL = /^skill\.\d+\.stat[12]$/ // narrow two-letter cell
     for (const [name, value] of Object.entries(values)) {
       const field = fieldMap.get(name)
       if (!field) continue
       try {
         field.setText(value)
-        if (LARGE_TEXT.test(name)) field.setFontSize(8)
+        if (LARGE_TEXT.test(name)) field.setFontSize(9)
+        else if (STAT_CELL.test(name)) field.setFontSize(6)
         field.updateAppearances(font)
       } catch {
         // Odd field state — skip rather than abort the whole export.
