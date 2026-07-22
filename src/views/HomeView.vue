@@ -54,8 +54,8 @@ function professions(c: (typeof store.roster)[number]): string {
     <p class="sub">Crea e mantieni i personaggi del tavolo. Tutto in locale, nel tuo browser.</p>
 
     <div class="toolbar">
-      <button class="btn" type="button" @click="newCharacter">＋ Nuova scheda</button>
-      <button class="btn btn--ghost" type="button" @click="pickFile">⤒ Importa JSON</button>
+      <button class="bsc-btn" type="button" @click="newCharacter">＋ Nuova scheda</button>
+      <button class="bsc-btn bsc-btn--outline" type="button" @click="pickFile">⤒ Importa JSON</button>
       <input ref="fileInput" type="file" accept="application/json,.json" hidden @change="onFile" />
     </div>
     <p v-if="importError" class="hint" role="alert">{{ importError }}</p>
@@ -67,7 +67,7 @@ function professions(c: (typeof store.roster)[number]): string {
         <span class="arch-card__role">{{ a.role }}</span>
         <span class="arch-card__blurb">{{ a.blurb }}</span>
         <button
-          class="btn btn--ghost btn--sm"
+          class="bsc-btn bsc-btn--outline bsc-btn--sm"
           type="button"
           :aria-label="`Usa l'archetipo ${a.name} (${a.role})`"
           @click="loadArchetype(a)"
@@ -84,7 +84,7 @@ function professions(c: (typeof store.roster)[number]): string {
         <span class="arch-card__role">{{ a.role }}</span>
         <span class="arch-card__blurb">{{ a.blurb }}</span>
         <button
-          class="btn btn--ghost btn--sm"
+          class="bsc-btn bsc-btn--outline bsc-btn--sm"
           type="button"
           :aria-label="`Usa la scheda di ${a.name} (${a.role})`"
           @click="loadArchetype(a)"
@@ -97,7 +97,7 @@ function professions(c: (typeof store.roster)[number]): string {
     <h2>Roster · {{ store.roster.length }} {{ store.roster.length === 1 ? 'personaggio' : 'personaggi' }}</h2>
 
     <p v-if="!store.roster.length" class="sub">
-      Nessuna scheda salvata. Crea la prima con <strong>Nuova scheda</strong> o parti dall'esempio.
+      Nessuna scheda salvata. Crea la prima con <strong>Nuova scheda</strong>, parti da un archetipo o importa un JSON.
     </p>
 
     <ul v-else class="roster">
@@ -108,8 +108,8 @@ function professions(c: (typeof store.roster)[number]): string {
           <span class="hint">{{ professions(c) }}</span>
         </div>
         <div class="roster__actions">
-          <button class="btn" type="button" :aria-label="`Apri ${c.identity.name || 'scheda'}`" @click="open(c.id)">Apri</button>
-          <button class="btn btn--ghost" type="button" :aria-label="`Elimina ${c.identity.name || 'scheda'}`" @click="store.remove(c.id)">Elimina</button>
+          <button class="bsc-btn bsc-btn--sm" type="button" :aria-label="`Apri ${c.identity.name || 'scheda'}`" @click="open(c.id)">Apri</button>
+          <button class="bsc-btn bsc-btn--outline" type="button" :aria-label="`Elimina ${c.identity.name || 'scheda'}`" @click="store.remove(c.id)">Elimina</button>
         </div>
       </li>
     </ul>
@@ -124,12 +124,12 @@ function professions(c: (typeof store.roster)[number]): string {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.7rem 0.9rem;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--bsc-border);
   border-radius: 8px;
-  background: var(--panel);
+  background: var(--bsc-surface);
 }
 .roster__main { display: flex; flex-direction: column; gap: 0.1rem; }
-.roster__name { font-family: var(--font-display); font-weight: 700; }
+.roster__name { font-family: var(--bsc-font-display); font-weight: 700; }
 .roster__actions { display: flex; gap: 0.5rem; }
 
 .archetypes {
@@ -145,13 +145,13 @@ function professions(c: (typeof store.roster)[number]): string {
   flex-direction: column;
   gap: 0.35rem;
   padding: 0.85rem;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--bsc-border);
   border-radius: 8px;
-  background: var(--panel);
+  background: var(--bsc-surface);
 }
-.arch-card__name { font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; }
-.arch-card__role { color: var(--gold); font-size: 0.82rem; }
-.arch-card__blurb { color: var(--muted); font-size: 0.86rem; flex: 1; }
-.arch-card .btn { align-self: flex-start; margin-top: 0.2rem; }
-.arch-card--real { border-left: 3px solid var(--accent); }
+.arch-card__name { font-family: var(--bsc-font-display); font-weight: 700; font-size: 1.02rem; }
+.arch-card__role { color: var(--bsc-attenzione); font-size: 0.82rem; }
+.arch-card__blurb { color: var(--bsc-text-muted); font-size: 0.86rem; flex: 1; }
+.arch-card .bsc-btn { align-self: flex-start; margin-top: 0.2rem; }
+.arch-card--real { border-left: 3px solid var(--bsc-primary); }
 </style>

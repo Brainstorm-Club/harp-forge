@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import { useTheme } from '@/composables/useTheme'
-import brainLogo from '@/assets/brain-badge.png'
 
 const { theme, toggle } = useTheme()
 
@@ -15,18 +14,18 @@ function skipToContent() {
 </script>
 
 <template>
-  <a class="skip-link" href="#contenuto" @click.prevent="skipToContent">Salta al contenuto</a>
+  <a class="bsc-skip" href="#contenuto" @click.prevent="skipToContent">Salta al contenuto</a>
   <header class="site-header">
     <div class="site-header__inner">
       <RouterLink class="brand" to="/">
-        <img class="brand__logo" :src="brainLogo" alt="" width="30" height="30" />
-        <span class="brand__mark">harp<span class="brand__spark">·</span>forge</span>
+        <span class="bsc-brandmark" aria-hidden="true" />
+        <span>harp<span class="brand__spark">·</span>forge</span>
         <span class="brand__tag">Brainstorm Club</span>
       </RouterLink>
       <span class="site-header__spacer" />
-      <a class="hint" href="https://www.brainstormclub.it" target="_blank" rel="noopener">brainstormclub.it ↗</a>
+      <a class="bsc-pill bsc-pill--tool" href="https://www.brainstormclub.it" target="_blank" rel="noopener">brainstormclub.it</a>
       <button
-        class="btn btn--ghost"
+        class="bsc-btn bsc-btn--outline bsc-btn--sm"
         type="button"
         :aria-label="theme === 'dark' ? 'Passa al tema chiaro (carta)' : 'Passa al tema scuro (carbone)'"
         @click="toggle"

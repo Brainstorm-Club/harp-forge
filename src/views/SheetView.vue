@@ -73,43 +73,43 @@ const counters = computed(() => character.value.counters)
 <template>
   <main id="contenuto" class="wrap" tabindex="-1">
     <div class="toolbar">
-      <button class="btn btn--ghost" type="button" @click="router.push('/')">← Roster</button>
-      <button class="btn" type="button" @click="save">💾 Salva</button>
-      <button class="btn btn--ghost" type="button" :disabled="exporting" @click="onExportPdf">
+      <button class="bsc-btn bsc-btn--outline bsc-btn--sm" type="button" @click="router.push('/')">← Roster</button>
+      <button class="bsc-btn bsc-btn--sm" type="button" @click="save">💾 Salva</button>
+      <button class="bsc-btn bsc-btn--outline bsc-btn--sm" type="button" :disabled="exporting" @click="onExportPdf">
         {{ exporting ? 'Esporto…' : '⤓ PDF' }}
       </button>
-      <button class="btn btn--ghost" type="button" @click="exportJson">⤓ JSON</button>
+      <button class="bsc-btn bsc-btn--outline bsc-btn--sm" type="button" @click="exportJson">⤓ JSON</button>
       <span v-if="msg" class="hint" role="status">{{ msg }}</span>
     </div>
 
     <!-- Identità -->
     <h2>Identità</h2>
     <div class="grid2">
-      <label>Nome<input v-model="character.identity.name" type="text" /></label>
-      <label>Razza<input v-model="character.identity.race" type="text" /></label>
-      <label>Origine<input v-model="character.identity.origin" type="text" /></label>
-      <label>Ruolo (40K)<input v-model="character.identity.role" type="text" /></label>
+      <label class="field">Nome<input class="bsc-input" v-model="character.identity.name" type="text" /></label>
+      <label class="field">Razza<input class="bsc-input" v-model="character.identity.race" type="text" /></label>
+      <label class="field">Origine<input class="bsc-input" v-model="character.identity.origin" type="text" /></label>
+      <label class="field">Ruolo (40K)<input class="bsc-input" v-model="character.identity.role" type="text" /></label>
     </div>
 
     <h3 class="mini">Professioni</h3>
     <div v-for="(p, i) in character.identity.professions" :key="i" class="prof-row">
-      <input v-model="p.name" type="text" placeholder="Professione" aria-label="Nome professione" />
-      <input v-model.number="p.level" type="number" min="1" class="w-lvl" aria-label="Livello professione" />
-      <button class="btn btn--ghost btn--sm" type="button" aria-label="Rimuovi professione" @click="store.removeProfession(i)">✕</button>
+      <input class="bsc-input" v-model="p.name" type="text" placeholder="Professione" aria-label="Nome professione" />
+      <input class="bsc-input w-lvl" v-model.number="p.level" type="number" min="1" aria-label="Livello professione" />
+      <button class="bsc-btn bsc-btn--outline bsc-btn--sm" type="button" aria-label="Rimuovi professione" @click="store.removeProfession(i)">✕</button>
     </div>
-    <button class="btn btn--ghost btn--sm" type="button" @click="store.addProfession()">＋ Professione</button>
+    <button class="bsc-btn bsc-btn--outline bsc-btn--sm" type="button" @click="store.addProfession()">＋ Professione</button>
 
     <div class="grid2">
-      <label class="span2">Descrizione<textarea v-model="character.identity.description" rows="3" /></label>
-      <label class="span2">Storia<textarea v-model="character.identity.history" rows="3" /></label>
+      <label class="field span2">Descrizione<textarea class="bsc-input" v-model="character.identity.description" rows="3" /></label>
+      <label class="field span2">Storia<textarea class="bsc-input" v-model="character.identity.history" rows="3" /></label>
     </div>
 
     <!-- DP budget -->
     <h2>
       Budget DP: <span class="total">{{ budget.spent }}</span> /
-      <input v-model.number="character.dp.budget" type="number" class="w-lvl" aria-label="Budget DP" />
-      <span v-if="!budget.over" class="ok">✓</span>
-      <span v-else class="badge badge--over">sforamento {{ Math.abs(budget.remaining ?? 0) }}</span>
+      <input class="bsc-input w-lvl" v-model.number="character.dp.budget" type="number" aria-label="Budget DP" />
+      <span v-if="!budget.over" class="bsc-badge bsc-badge--ok">✓ nel budget</span>
+      <span v-else class="bsc-badge bsc-badge--flag">sforamento {{ Math.abs(budget.remaining ?? 0) }}</span>
       · DP da stat {{ dpIncome }}
     </h2>
     <div
@@ -125,19 +125,19 @@ const counters = computed(() => character.value.counters)
 
     <!-- Stats -->
     <h2>Statistiche</h2>
-    <table>
+    <table class="bsc-table">
       <thead>
-        <tr><th>Stat</th><th class="num">Valore</th><th class="num">Bon</th><th class="num">Race</th><th class="num">Spec</th><th class="num">Totale</th><th class="num">DP</th></tr>
+        <tr><th scope="col">Stat</th><th scope="col" class="bsc-num">Valore</th><th scope="col" class="bsc-num">Bon</th><th scope="col" class="bsc-num">Race</th><th scope="col" class="bsc-num">Spec</th><th scope="col" class="bsc-num">Totale</th><th scope="col" class="bsc-num">DP</th></tr>
       </thead>
       <tbody>
         <tr v-for="k in statOptions" :key="k">
           <td>{{ k }}</td>
-          <td class="num"><input v-model.number="character.stats.values[k].value" type="number" class="w-num" :aria-label="`${k} valore`" /></td>
-          <td class="num">{{ statBonus(character.stats.values[k].value) }}</td>
-          <td class="num"><input v-model.number="character.stats.values[k].race" type="number" class="w-num" :aria-label="`${k} modificatore razza`" /></td>
-          <td class="num"><input v-model.number="character.stats.values[k].spec" type="number" class="w-num" :aria-label="`${k} modificatore speciale`" /></td>
-          <td class="num total">{{ statTotals[k] }}</td>
-          <td class="num">{{ Math.max(0, statBonus(character.stats.values[k].value)) }}</td>
+          <td class="bsc-num"><input class="bsc-input w-num" v-model.number="character.stats.values[k].value" type="number" :aria-label="`${k} valore`" /></td>
+          <td class="bsc-num">{{ statBonus(character.stats.values[k].value) }}</td>
+          <td class="bsc-num"><input class="bsc-input w-num" v-model.number="character.stats.values[k].race" type="number" :aria-label="`${k} modificatore razza`" /></td>
+          <td class="bsc-num"><input class="bsc-input w-num" v-model.number="character.stats.values[k].spec" type="number" :aria-label="`${k} modificatore speciale`" /></td>
+          <td class="bsc-num total">{{ statTotals[k] }}</td>
+          <td class="bsc-num">{{ Math.max(0, statBonus(character.stats.values[k].value)) }}</td>
         </tr>
       </tbody>
     </table>
@@ -147,64 +147,46 @@ const counters = computed(() => character.value.counters)
 
     <!-- Skills -->
     <h2>Abilità · {{ character.skills.length }}</h2>
-    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabella abilità, scorrevole orizzontalmente">
-      <table>
+    <div class="bsc-table-scroll" tabindex="0" role="region" aria-label="Tabella abilità, scorrevole orizzontalmente">
+      <table class="bsc-table">
         <thead>
-          <tr><th scope="col">Nome</th><th scope="col">Cat.</th><th scope="col">Stat 1</th><th scope="col">Stat 2</th><th scope="col" class="num">Rank</th><th scope="col" class="num">Cost</th><th scope="col" class="num">Spec</th><th scope="col" class="num">Rank+</th><th scope="col" class="num">Stat+</th><th scope="col" class="num">Totale</th><th scope="col" class="num">DP</th><th scope="col"><span class="sr-only">Azioni</span></th></tr>
+          <tr><th scope="col">Nome</th><th scope="col">Cat.</th><th scope="col">Stat 1</th><th scope="col">Stat 2</th><th scope="col" class="bsc-num">Rank</th><th scope="col" class="bsc-num">Cost</th><th scope="col" class="bsc-num">Spec</th><th scope="col" class="bsc-num">Rank+</th><th scope="col" class="bsc-num">Stat+</th><th scope="col" class="bsc-num">Totale</th><th scope="col" class="bsc-num">DP</th><th scope="col"><span class="sr-only">Azioni</span></th></tr>
         </thead>
         <tbody>
           <tr v-for="s in character.skills" :key="s.id">
-            <td><input v-model="s.name" type="text" class="w-name" aria-label="Nome abilità" /></td>
-            <td><input v-model="s.category" type="text" class="w-cat" :aria-label="`Categoria di ${s.name}`" /></td>
-            <td><select v-model="s.stats[0]" :aria-label="`Prima statistica di ${s.name}`"><option v-for="o in statOptions" :key="o" :value="o">{{ o }}</option></select></td>
-            <td><select v-model="s.stats[1]" :aria-label="`Seconda statistica di ${s.name}`"><option v-for="o in statOptions" :key="o" :value="o">{{ o }}</option></select></td>
-            <td class="num"><input v-model.number="s.ranks" type="number" min="0" class="w-num" :aria-label="`Rank di ${s.name}`" /></td>
-            <td class="num"><input v-model.number="s.cost" type="number" min="0" class="w-num" :aria-label="`Costo di ${s.name}`" /></td>
-            <td class="num"><input :value="specOf(s)" type="number" class="w-num" :aria-label="`Spec di ${s.name}`" @input="setSpec(s, Number(($event.target as HTMLInputElement).value))" /></td>
-            <td class="num">{{ skillRankBonus(s.ranks, store.ruleset) }}</td>
-            <td class="num">{{ skillStatBonus(s, character.stats.values) }}</td>
-            <td class="num total">{{ store.skillTotalOf(s) }}</td>
-            <td class="num">{{ store.skillDpOf(s) }}</td>
-            <td><button class="btn btn--ghost btn--sm" type="button" :aria-label="`Rimuovi ${s.name}`" @click="store.removeSkill(s.id)">✕</button></td>
+            <td><input class="bsc-input w-name" v-model="s.name" type="text" aria-label="Nome abilità" /></td>
+            <td><input class="bsc-input w-cat" v-model="s.category" type="text" :aria-label="`Categoria di ${s.name}`" /></td>
+            <td><select class="bsc-select w-sel" v-model="s.stats[0]" :aria-label="`Prima statistica di ${s.name}`"><option v-for="o in statOptions" :key="o" :value="o">{{ o }}</option></select></td>
+            <td><select class="bsc-select w-sel" v-model="s.stats[1]" :aria-label="`Seconda statistica di ${s.name}`"><option v-for="o in statOptions" :key="o" :value="o">{{ o }}</option></select></td>
+            <td class="bsc-num"><input class="bsc-input w-num" v-model.number="s.ranks" type="number" min="0" :aria-label="`Rank di ${s.name}`" /></td>
+            <td class="bsc-num"><input class="bsc-input w-num" v-model.number="s.cost" type="number" min="0" :aria-label="`Costo di ${s.name}`" /></td>
+            <td class="bsc-num"><input class="bsc-input w-num" :value="specOf(s)" type="number" :aria-label="`Spec di ${s.name}`" @input="setSpec(s, Number(($event.target as HTMLInputElement).value))" /></td>
+            <td class="bsc-num">{{ skillRankBonus(s.ranks, store.ruleset) }}</td>
+            <td class="bsc-num">{{ skillStatBonus(s, character.stats.values) }}</td>
+            <td class="bsc-num total">{{ store.skillTotalOf(s) }}</td>
+            <td class="bsc-num">{{ store.skillDpOf(s) }}</td>
+            <td><button class="bsc-btn bsc-btn--outline bsc-btn--sm" type="button" :aria-label="`Rimuovi ${s.name}`" @click="store.removeSkill(s.id)">✕</button></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <button class="btn btn--ghost btn--sm" type="button" @click="addSkill">＋ Abilità</button>
+    <button class="bsc-btn bsc-btn--outline bsc-btn--sm" type="button" @click="addSkill">＋ Abilità</button>
 
     <!-- Counters -->
     <h2>Contatori</h2>
     <div class="grid2">
-      <label>Punti Fato<input v-model.number="counters.fate" type="number" /></label>
-      <label>Punti Follia<input v-model.number="counters.insanity" type="number" /></label>
-      <label>Punti Corruzione<input v-model.number="counters.corruption" type="number" /></label>
+      <label class="field">Punti Fato<input class="bsc-input" v-model.number="counters.fate" type="number" /></label>
+      <label class="field">Punti Follia<input class="bsc-input" v-model.number="counters.insanity" type="number" /></label>
+      <label class="field">Punti Corruzione<input class="bsc-input" v-model.number="counters.corruption" type="number" /></label>
     </div>
   </main>
 </template>
 
 <style scoped>
-.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1rem; margin: 0.5rem 0 1rem; }
-.grid2 .span2 { grid-column: 1 / -1; }
-label { display: flex; flex-direction: column; gap: 0.2rem; font-size: 0.82rem; color: var(--muted); }
-input, textarea, select {
-  font: inherit;
-  background: var(--panel);
-  color: var(--ink);
-  border: 1px solid var(--line-strong);
-  border-radius: 5px;
-  padding: 0.3rem 0.45rem;
-}
-textarea { resize: vertical; }
-.mini { font-family: var(--font-display); font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0 0.3rem; }
-.prof-row { display: flex; gap: 0.4rem; margin-bottom: 0.4rem; }
-.prof-row input:first-child { flex: 1; }
-.w-lvl { width: 4.5rem; }
-.w-num { width: 4rem; text-align: right; }
-.w-name { width: 11rem; }
-.w-cat { width: 8rem; }
-.btn--sm { padding: 0.25rem 0.55rem; font-size: 0.8rem; }
-.table-scroll { overflow-x: auto; }
-.dpbar { height: 8px; background: var(--panel-2); border-radius: 999px; overflow: hidden; margin: 0.3rem 0 1rem; }
-.dpbar__fill { height: 100%; background: var(--bsc-success); }
-.dpbar__fill.over { background: var(--accent); }
+.field { display: flex; flex-direction: column; gap: var(--bsc-space-1); font-family: var(--bsc-font-mono); font-size: var(--bsc-text-sm); color: var(--bsc-text-muted); }
+textarea.bsc-input { resize: vertical; }
+/* Compact form controls inside the dense skill/stat tables */
+.bsc-table .bsc-input,
+.bsc-table .bsc-select { padding-block: var(--bsc-space-1); }
+.w-sel { width: 4.6rem; min-width: 4.6rem; padding-right: var(--bsc-space-5); }
 </style>
