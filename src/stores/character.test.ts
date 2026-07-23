@@ -15,6 +15,27 @@ describe('createEmptyCharacter', () => {
     expect(c.dp.budget).toBe(350)
     expect(typeof c.id).toBe('string')
   })
+
+  it('seeds all sheet skills at rank 0', () => {
+    const c = createEmptyCharacter()
+    expect(c.skills.length).toBeGreaterThanOrEqual(48)
+    expect(c.skills.every((sk) => sk.ranks === 0)).toBe(true)
+    expect(c.skills.some((sk) => sk.id === 'endurance')).toBe(true)
+  })
+})
+
+describe('importJson fills the sheet', () => {
+  it('adds missing sheet skills at rank 0 and keeps imported values', () => {
+    const s = useCharacterStore()
+    const json = JSON.stringify({
+      stats: { values: Object.fromEntries(STAT_KEYS.map((k) => [k, { value: 50, race: 0, spec: 0 }])) },
+      skills: [{ id: 'endurance', category: 'fisiche', name: 'Endurance', stats: ['Co', 'Sd'], ranks: 8, cost: 2 }],
+    })
+    s.importJson(json)
+    expect(s.character.skills.length).toBeGreaterThanOrEqual(48)
+    expect(s.character.skills.find((sk) => sk.id === 'endurance')?.ranks).toBe(8) // importato
+    expect(s.character.skills.find((sk) => sk.id === 'correre')?.ranks).toBe(0)   // mancante → 0
+  })
 })
 
 describe('roster CRUD', () => {
@@ -73,12 +94,13 @@ describe('importJson validation', () => {
 describe('skill & profession helpers', () => {
   it('adds/removes skills without duplicates', () => {
     const s = useCharacterStore()
+    const base = s.character.skills.length // il foglio parte con tutte le abilità
     const skill = { id: 'x', category: 'mentali', name: 'X', stats: ['Re', 'In'] as ['Re', 'In'], ranks: 1, cost: 4 }
     s.addSkill(skill)
     s.addSkill(skill) // duplicate ignored
-    expect(s.character.skills).toHaveLength(1)
+    expect(s.character.skills).toHaveLength(base + 1)
     s.removeSkill('x')
-    expect(s.character.skills).toHaveLength(0)
+    expect(s.character.skills).toHaveLength(base)
   })
   it('adds/removes professions', () => {
     const s = useCharacterStore()

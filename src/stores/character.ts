@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import type { Character, Skill, StatKey, Profession } from '@/types/character'
 import { STAT_KEYS } from '@/types/character'
 import { harp40k } from '@/data/rulesets/harp40k'
+import { createBlankSkills } from '@/data/sheetSkills'
 import {
   statTotal,
   statDpIncome,
@@ -35,7 +36,7 @@ export function createEmptyCharacter(): Character {
     identity: { name: '', race: '', professions: [{ name: '', level: 1 }] },
     stats: { values: stats },
     dp: { budget: 350 },
-    skills: [],
+    skills: createBlankSkills(),
     implants: [],
     weapons: [],
     armour: [],
@@ -151,6 +152,16 @@ export const useCharacterStore = defineStore(
         id: typeof r.id === 'string' && r.id ? r.id : crypto.randomUUID(),
         meta: { ...empty.meta, ...(r.meta as object) },
       }
+      // Tutte le abilità del foglio sempre presenti (le mancanti → ranks 0), in
+      // ordine di foglio; le skill importate mantengono i loro valori, le eventuali
+      // skill personalizzate (fuori foglio) restano in coda.
+      const imported = Array.isArray(data.skills) ? data.skills : []
+      const importedById = new Map(imported.map((s) => [s.id, s]))
+      const merged: Skill[] = createBlankSkills().map((b) => importedById.get(b.id) ?? b)
+      for (const s of imported) {
+        if (!merged.some((m) => m.id === s.id)) merged.push(s)
+      }
+      data.skills = merged
       character.value = data
       return data
     }
